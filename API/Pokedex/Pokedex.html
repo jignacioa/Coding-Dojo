@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+        <link rel="stylesheet" href="pokedex.css"/>
+
+    <script>
+        $(document).ready(function() {
+            var html_src = ""
+            for (var i = 1; i <=60 ; i++) {
+                html_src += '<img id="'+i+'" src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'+i+'.png" alt="">'
+            }
+            console.log(html_src)
+            $('.pokeimage').html(html_src)
+            $('.pokeimage img').click(function() {
+                var pokenumber = $(this).attr('id')
+            $.get('https://pokeapi.co/api/v2/pokemon/'+ pokenumber, function(res) {
+                    
+                    $('.pokedex #Name').html('<h3>Name:</h3><p>'+(res['species']['name'])+'</p>')
+                    $('.pokedex #Image').html('<img src="'+(res['sprites']['front_default'])+'">')
+                    $('.pokedex #Type').html('<h3>Type:</h3><p>'+(res['types'][0]['type']['name'])+'</p')
+                    $('.pokedex #Height').html('<h3>Height:</h3><p>'+(res['height'])+'</p>')
+                    $('.pokedex #Weight').html('<h3>Weight:</h3><p>'+(res['weight'])+'</p')
+                })
+
+            })
+
+        })
+
+    </script>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="pokeimage"></div>
+            <div class="pokedex">
+                <div id="Name"></div>
+                <div id="Image"></div>
+                <div id="Type"></div>
+                <div id="Height"></div>
+                <div id="Weight"></div>
+            </div>
+        </div>
+
+    </body>
+</html>    

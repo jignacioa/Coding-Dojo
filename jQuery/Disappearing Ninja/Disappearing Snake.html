@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>jQuery Functions</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+        <script>
+            $(document).ready(function() {
+                $('img').click(function() {
+                    $(this).hide();
+                })
+                $('button').click(function() {
+                    $('img').show();
+                })
+            })
+        </script>
+    </header>
+    <body>
+        <img src="snake.jpg" alt="snake with hand" width="300px" height=auto>
+        <img src="snake.jpg" alt="snake with hand" width="300px" height=auto>
+        <img src="snake.jpg" alt="snake with hand" width="300px" height=auto>
+        <img src="snake.jpg" alt="snake with hand" width="300px" height=auto>
+        <img src="snake.jpg" alt="snake with hand" width="300px" height=auto>
+        <img src="snake.jpg" alt="snake with hand" width="300px" height=auto>
+        <img src="snake.jpg" alt="snake with hand" width="300px" height=auto>
+        <img src="snake.jpg" alt="snake with hand" width="300px" height=auto>
+        <button>RESTORE</button>
+    </body>   
+</html>    

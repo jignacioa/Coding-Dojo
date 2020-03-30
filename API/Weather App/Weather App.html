@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Weather App</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+    
+                $('form').submit(function(){ 
+                    var location = $('input').val()
+                    $.get("http://api.openweathermap.org/data/2.5/weather?q="+location+",us&&appid=9c45605db6ce24fc694aa18394eef19e", function(res){
+                        var temp = (((res['main']['temp']-273.15)*(9/5)) + 32).toFixed(2)
+                        $('.city').html('<h3>'+(res['name'])+': '+(res['weather'][0]['description'])+ '</h3>')
+                        $('.temperature').html('<h3>Temperature: '+temp+' F</h3>')
+                        $('.coord').html('<h3>Coord: '+(res['coord']['lon'])+', '+(res['coord']['lat'])+'</h3')
+
+                    }, 'json')
+                    return false;
+                }) 
+            }) 
+        
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <form>
+            <input type="text" placeholder="Search">
+            <button type="submit">Submit Query</button>
+            </form>
+            <div class="city"></div>
+            <div class="temperature"></div>
+            <div class="coord"></div>
+        </div>
+    </body>
+</html>

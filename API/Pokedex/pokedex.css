@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}ch
+
+.container {
+    width: 970px;
+}
+
+.pokeimage {
+    width: 500px;
+    display: inline-block;
+}
+
+.pokedex {
+    display: inline-block;
+    vertical-align: top;
+    position: fixed;
+}
+.pokedex div {
+    display: block;
+}
+

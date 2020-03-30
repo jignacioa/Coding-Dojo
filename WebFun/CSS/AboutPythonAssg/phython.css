@@ -1,0 +1,143 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    width: 970px;
+    margin:auto;
+    background-color: rgb(36,80,118)
+}
+
+.header {
+    display:flex;
+    justify-content: space-between;
+
+}
+
+#pythonlogo {
+    width:350px;
+    height: auto;
+    padding: 10px;
+    margin: 20px;
+
+}
+
+.search {
+    text-align: right;
+    margin:30px;
+
+}
+
+.header form {
+    margin: auto;
+    background-color: rgb(68,68,68);
+    padding:15px;
+    width:260px;
+    border-radius: 5px;
+    
+    
+}
+.search input {
+    height: 25px;
+    width: 210px;
+}
+
+.search button {
+    padding:5px;
+    margin-right:5px;
+    border-radius: 5px;
+}
+
+.search p {
+    color: white;
+}
+
+.bar {
+    background-color: rgb(69,125,173);
+    width: 800px;
+    height: 25px;
+    margin:auto;
+    padding: 10px;
+    border-radius: 5px;
+    display:flex;
+    justify-content: space-evenly;
+    font-size: 20px
+    
+}
+.bar a {
+    color:white;
+    text-decoration: none;
+    
+}
+
+.midtop {
+    display:flex;
+    justify-content: flex-end;
+    text-align: center;
+    
+}
+
+
+
+.midtop ul {
+    display:inline-block;
+    margin: 20px;
+    list-style-position:inside
+ }
+
+.midtop a {
+    color:white;
+    margin: 0px;
+    line-height: 30px;
+    font-size: 21px
+}
+
+.history {
+    display: inline-block;
+    vertical-align: top;
+    margin:20px;
+    width: 600px;
+    height: auto;
+    padding: 10px;
+    color:white;
+    
+}
+
+.midbottom {
+    display:flex;
+    justify-content: space-evenly;
+    background-color: white;
+}
+
+.submid {
+    width: 250px;
+    height: auto;
+    background-color:white;
+    text-align: center;
+}
+
+.history h3 {
+    color: rgb(224,193,60);
+}
+
+.submid ul{
+    color: rgb(132,178,218);
+}
+
+.footer {
+    padding-top: 75px;
+    text-align: center;
+   
+}
+
+.footer a {
+    font-size: 20px ;
+    text-decoration: none;
+    color:white;
+    padding: 15px;
+}
+
+.footer p {
+   margin-top: 15px;
+}

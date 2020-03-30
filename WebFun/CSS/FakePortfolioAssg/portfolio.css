@@ -1,0 +1,176 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+   
+    width: 1250px;
+    margin: auto auto;
+    background-image: radial-gradient(circle, rgb(113, 90, 119), rgb(15, 13, 15))
+
+    
+}
+
+.header {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.87)
+}
+
+    .header h1 {
+    display: inline;
+    font-family: cursive;
+    
+    
+    }
+
+    .header h3 {
+    display: inline;
+    margin-left: 725px;
+    font-family: sans-serif;
+   
+    }
+
+.biography {
+    padding: 0px;
+    margin:10px;
+}
+    
+    .biography div {
+    display: inline-block;
+    margin:5px;
+    }
+
+    .biography img {
+        max-width: 530px;
+        display: inline-block;
+        margin: 20px;
+        height: 360px;
+        margin-right: 0px;
+    }
+
+        #imgborder {
+            border: 5px solid rgb(133, 123, 123);
+        }
+
+    .biography .about {
+        background-color: white;
+        width:620px;
+        display:inline-block;
+        margin: 20px;
+        margin-left: 25px;
+        margin-right: 0px;
+        vertical-align:top;
+        height: 370px
+    
+        
+        
+    }
+        .about h3{
+           background-color: grey;
+           color: white;
+           margin: 0px;
+           padding: 10px;
+           
+           
+            
+        }
+
+        .fonth3 {
+            font-size: x-large;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-image: radial-gradient(circle, rgb(63, 63, 63), rgb(197, 197, 197))
+        }
+
+        .about p {
+            padding: 10px;
+        }
+
+.group {
+    display: inline-block;
+    margin: 30px;
+    margin-top:0px
+    
+}    
+    .subgroup {
+        background-color: white;
+        width: 380px;
+        height: 800px;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+        #middle {
+            margin-left:20px;
+            margin-right:20px
+
+        }
+
+        #middle p {
+            padding-bottom: 5px
+        }
+
+
+.pfont {
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding:10px;
+    
+}
+
+span {
+    text-decoration: underline;
+}
+
+.group h3 {
+    background-color: grey;
+    text-align: left;
+    color:white;
+    padding: 10px;
+    height:20px;
+}
+
+.subimage {
+    width: 380px;
+    height: auto;
+}
+
+.techimage {
+    height: 50px;
+    width: 50px;
+    margin:10px;
+}
+
+button {
+    background-color: green;
+    color: white;
+    border-radius:5px;
+    padding: 5px;
+    margin: 147px;
+    margin-top: 0px;
+    white-space: nowrap;
+    text-align: center;
+    
+}
+
+.footer {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.87)
+}
+
+    #footercontact{
+        margin-left: 500px;
+    }
+
+    #sociallinks{
+        margin-left: 450px;
+    
+    }
+
+    .linkcolor {
+        color: black;
+    }
+    .socialimages {
+        width: 15px;
+        length:15px;
+    }

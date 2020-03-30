@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>jQuery Functions</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+        <script>
+            $(document).ready(function(){
+                $('#hichi, #bye').hide();
+
+                $('#hola').click(function(){
+                    $('#hichi, #bye').fadeIn(); 
+                    $('#hola').hide();
+                })
+
+                $('#bye').click(function(){
+                    $('#hichi').fadeOut();
+                });
+
+                $('#toggleswitch p').hide()
+                $( "button" ).click(function() {
+                    $( "p" ).slideToggle( "slow" );
+                })      
+                
+
+                $('#slidedown img').hide();
+                $('#slidedown h2').click(function() {
+                    $("#slidedown img").slideDown("slow");
+                })
+                
+                //$('#slideup img').hide();
+                $('#slideup h2').click(function() {
+                    $('#slideup img').slideUp("slow");
+                })
+                
+          
+            })
+
+          
+
+        </script>
+    </header>
+    <body>
+        <h1 id="hola">Hi</h1>
+        <h1 id="bye">Bye</h1>
+        <img id="hichi" src="hola.jpeg" alt="chihuaha coming out of corner" width="550px" height="auto">
+
+        <div id="toggleswitch">
+            <button>Toggle</button>
+                <p>
+                IT IS VERY LIT RIGHT NOW BRO <em>VERY LIT</em> LOOKS LIKE YOU MADE IT HAPPEN!
+                </p>
+        </div>
+
+        <div id="slidedown">
+            <h2>CLICK ME FOR MAGIC</h2>
+            <img src="halo.png"  alt="halo" width="500">
+        </div> 
+        <div id="slideup">
+            <h2>CLICK ME FOR EVEN MORE MAGIC</h2>
+            <img src="zoom.jpg"  alt="girl" width="500">
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,171 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    width: 970px;
+    margin: auto;
+    background-color:white;
+}
+
+.menu {
+    justify-content: flex-start;
+    display:flex;
+    padding: 0px;
+    background-color: rgb(235,235,235);
+    border-radius: 5px;
+}
+    .menu img {
+    width: 70px;
+    display: inline-block;
+    border-radius: 7px;
+    }
+
+    .menulinks {
+        display:flex;
+        justify-content: space-between;
+        margin: 15px;
+        width: 250px;
+        margin-right: 360px;    
+    }
+    .menulinks a {
+        color:black;
+    }
+    .menu form {
+        display: inline-block;
+        margin: 15px;
+    }
+
+    form input {
+        width: 160px;
+        height: 30px;
+        border-top-left-radius: 7px;
+        border-bottom-left-radius: 7px;
+    }
+
+.main img {
+    width: 970px;
+    margin-top: 20px;
+    vertical-align:middle
+}
+
+.main div {
+    background-color: rgb(68,68,68);
+    padding: 6px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+
+#accordance {
+    color:white;
+    display: inline-block;
+}
+
+.mainccordance {
+    display: inline-block;
+    color: black;
+}
+.main a {
+    color:rgb(97,185,231);
+}
+
+
+#discover {
+    display: inline-block;
+    padding:30px;
+    color: gray;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#browsebutton {
+    background-color: rgb(73,127,165);
+    width: 300px;
+    height:60px;
+    font-size: 20px;
+    padding: 5px;
+    color: white;
+    border-radius: 10px;
+    
+    
+}
+
+#discoveroptions {
+   padding:0px;
+   margin: 0px;
+   display:flex;
+   justify-content:space-between
+}
+
+#discoveroptions div {
+    background-color: white;
+    display:inline-block;
+    width:185px;
+    vertical-align: top;
+    padding:25px;
+    margin: 20px;
+
+}
+
+.contentimage {
+    display:inline-block;
+}
+.contentheader {
+    vertical-align:top;
+    display:inline-block;
+    padding:6px;
+}
+
+
+.contentbuttons {
+    color:white;
+    background-color:rgb(97,185,231);
+    width: 128px;
+    padding: 5px;
+    border-radius:5px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+#moreinfo {
+    display:flex;
+    justify-content:space-between;
+    
+    
+}
+
+
+
+#moreinfo a {
+    color:rgb(136, 120, 120);
+}
+#moreinfo div {
+    background-color: white;
+    padding: 11px;
+    margin-bottom: 40px
+   
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+#arrowbutton {
+    color:white;
+    background-color:rgb(97,185,231);
+    width: 30px;
+    height:35px;
+    margin-left: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+}
+
+#footer {
+    margin:25px
+}
