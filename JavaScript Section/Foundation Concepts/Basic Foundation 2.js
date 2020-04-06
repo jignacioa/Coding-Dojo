@@ -182,8 +182,18 @@ function BiggieSize(arr) {
   return a new one containing all the values of the original 
   array, but make them all negative (not simply multiplied by -1). 
   Given [1,-3,5], return [-1,-3,-5].*/
-
-  function makeNegative(arr)
+  function turnNeg(arr) {
+    var allNeg = [];
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] > 0) {
+          arr[i] = arr[i]*-1
+      }
+      allNeg.push(arr[i]) 
+    }
+    return allNeg
+  }
+  //console.log(turnNeg([1,-3,5]))
+  
   
   
   
@@ -201,7 +211,7 @@ function BiggieSize(arr) {
     }
     console.log("I'm hungry");
   }
-//hunger([1,'food',3, 'food']);
+//hunger([1,'food',3, 'food']);*/
   
   
   /*13Swap Toward the Center - Given an array, swap the first 
@@ -210,6 +220,17 @@ function BiggieSize(arr) {
   turns the array into ["pizza", 42, "Ada", 2, true].  
   swapTowardCenter([1,2,3,4,5,6]) turns the array into [6,2,4,3,5,1].  
   No need to return the array this time.*/
+  
+  function center(arr) {
+    for (var i = 0; i < arr.length/2; i+=2) {
+    var temp = arr[i];
+    arr[i] = arr[arr.length-(1+i)]
+    arr[arr.length-(1+i)] = temp
+    }
+    return arr
+  }
+  //console.log(center([true,42,"Ada",2,"pizza"]))
+
   
   /*14)Scale the Array - Given an array arr and a number num, 
   multiply all values in the array arr by the number num, and 
