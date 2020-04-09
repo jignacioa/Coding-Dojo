@@ -52,7 +52,7 @@ print(getAverage([1,2,3,4]))
 
 def getLength(list):
     return len(list)
-print(getLength([[37,2,1,-9]]))
+print(getLength([37,2,1,-9]))
 
 #Minimum - Create a function that takes a list of numbers and returns the minimum value in the list. If the list is empty, have the function return False.
 # Example: minimum([37,2,1,-9]) should return -9
