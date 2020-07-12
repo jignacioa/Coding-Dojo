@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mictlan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    
+</head>
+<body>
+    <div class = container>
+    <div class = "banner">
+    <img src="{% static 'img/banner.jpg' %}" alt="">
+    </div>
+    <h1 class="display-1">Mah xipano {{user.first_name}}</h1>
+    <form action="/dashboard/listings">
+        <button type="submit" class="btn btn-dark">Marketplace</button>
+    </form><br>
+    
+    <h3 class="text-primary">Current items in the Marketplace</h3>
+    <form action="/dashboard/newproduct">
+        <button type="submit" class="btn btn-dark">Add Product</button>
+    </form><br>
+    <form action="/">
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+</div>
+</body>
+</html>

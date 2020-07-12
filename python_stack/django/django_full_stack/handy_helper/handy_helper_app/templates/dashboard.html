@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Handy Helper</title>
+</head>
+<body>
+    <h1>Hello {{logged_user.first_name}}!</h1>
+       <a href="/jobs/new">New Job</a>
+       <a href="/logout">Logout</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Job</th>
+                <th>Location</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for job in jobs %}
+            <tr>
+                <td>{{job.title}}</td>
+                <td>{{job.location}}</td>
+                <td>
+                    <a href="/jobs/{{job.id}}">View</a>
+                    {% if logged_user in job.performed_by.all %}
+                    <a href="/jobs/{{job.id}}/remove">Remove</a>
+                    <a href="/jobs/{{job.id}}/edit">Edit</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>

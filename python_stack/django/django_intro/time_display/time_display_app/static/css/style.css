@@ -1,0 +1,22 @@
+.container {
+    width: 930px;
+    padding: 0px;
+    margin: auto;
+}
+
+.date {
+    border: 5px dashed black;
+}
+h1 {
+    color: red;
+    text-align: center;
+    font-family: "Consolas";
+    font-size: 100px;
+    
+}
+
+h3 {
+    color: black;
+    text-align: center;
+    font-family: "Consolas";
+    font-size: 50px;

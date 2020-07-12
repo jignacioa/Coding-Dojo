@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Books and Authors Project</title>
+    </head>
+    <body>
+        <h1>{{selected_author.first_name}} {{selected_author.last_name}}</h1>
+        <h3>ID {{selected_author.id}}</h3>
+        <h3>{{selected_author.notes}}</h3>
+
+        <h3>Books</h3>
+        <ul>
+            {% for book in selected_author.book.all %}
+            <li>{{book.title}}</li>
+            {% endfor %}
+        </ul>
+        <form action="/authors/{{selected_author.id}}/addpublication" method="POST">
+        {% csrf_token %}
+        <select name="book_dropdown_selection" id="">
+            <option value="">-select a book-</option>
+            {% for book in books %}
+            <option value= {{book.id}}>{{book.title}}</option>
+            {% endfor %}
+        </select>
+        <button>Add</button>
+    </form>
+    <a href = "/authors">Return to Authors</a>
+    </body>
+
+</html>

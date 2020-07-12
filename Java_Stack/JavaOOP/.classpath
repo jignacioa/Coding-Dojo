@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Inheritance/src"/>
+	<classpathentry kind="src" path="ListAssignment"/>
+	<classpathentry kind="src" path="Member_Variables"/>
+	<classpathentry kind="src" path="ProjectClass"/>
+	<classpathentry kind="src" path="this_keyword"/>
+	<classpathentry kind="src" path="ZooKeeperOne/src"/>
+	<classpathentry kind="output" path="Inheritance/bin"/>
+</classpath>

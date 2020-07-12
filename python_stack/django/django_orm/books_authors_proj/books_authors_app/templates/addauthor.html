@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Books and Authors Project</title>
+    </head>
+    <body>
+        <h1>Add an Author</h1>
+        <form action="/authors/addauthor" method="POST">
+            {% csrf_token %}
+            <div>
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname">
+            </div>
+            <div>
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname">
+            </div>  
+            <div>
+                <label for="notes">Notes</label>
+                <input type="text" name="notes">
+            </div>
+            <button>Add</button>
+        </form>
+        <table>
+            <thead>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Action</td>
+            <thead>
+            <tbody>
+                {% for author in authors %}
+                <tr>
+                    <td>{{author.id}}</td>
+                    <td>{{author.first_name}} {{author.last_name}}</td>
+                    <td><a href="/authors/{{author.id}}">View</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+     <a href="/">Go to Add a Book</a>
+    </body>
+
+</html>

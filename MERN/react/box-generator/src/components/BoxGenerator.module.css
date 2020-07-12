@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 800px;
+   
+}
+
+
+.box {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    margin: 5px;
+}

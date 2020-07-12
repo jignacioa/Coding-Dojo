@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Handy Helper</title>
+</head>
+<body>
+    
+<form enctype="multipart/form-data" method="POST" action="/dashboard/newproduct/addimage/upload"> <!--#/upload/product_image-->
+    {% csrf_token %}s
+    {{ form.as_p }}
+    <input type="file" value="Upload" name="product_image">
+    <button>Upload</button>
+    <!-- <img src='/media/product_item/{{product.image}}' width="400" height="400"> -->
+</form>
+</body>
+</html>

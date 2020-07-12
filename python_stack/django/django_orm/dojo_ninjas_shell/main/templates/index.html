@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Dojo & Ninjas Shell</title>
+    </head>
+    <body>
+        <h1>Add a Dojo</h1>
+            <form action="/dojoadd" method="POST">
+                {% csrf_token%}
+                <label for="dojoname">Name</label>
+                <input type="text" name ="dojoname">
+                <label for="city">City</label>
+                <input type="text" name ="city">
+                <label for="state">State</label>
+                <input type="text" name ="state">
+                <button>Add</button>
+            </form>
+        <h1>Add a Ninja</h1>
+            <form action="/addninja" method="POST">
+                {% csrf_token %}
+                <label for="firstname">First Name</label>
+                <input type="text" name ="firstname">
+                <label for="lastname">Last Name</label>
+                <input type="text" name ="lastname">
+                <label for="dojo">Dojo</label>
+                <select name = "dojoselected">
+                    <option>-select a dojo-</option>
+                    {% for dojo in dojos %}
+                    <option value ={{dojo.id}}>{{dojo.name}}</option>
+                    {% endfor %}
+                </select>
+                <button>Add</button>
+            </form>
+            <hr>
+        <h1>All the Dojos</h1>
+        {% for dojo in dojos %}
+        <h3>{{dojo.name}}: Ninjas at the {{dojo.name}} - {{dojo.ninja.all.count}} <a href="/{{dojo.id}}/delete">Delete</a></h3>
+            {% for ninja in dojo.ninja.all %}
+            <p>{{ninja.first_name}}</p>
+            {% endfor %}
+        {% endfor %}
+            
+    </body>
+</html>

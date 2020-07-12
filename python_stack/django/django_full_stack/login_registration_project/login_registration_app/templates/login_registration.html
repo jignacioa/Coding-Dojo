@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html></html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Registration and Login</title>
+    </head>
+    <body>
+        <h1>Registration</h1>
+        {% for error in messages %}
+        <p>{{ error }}</p>
+        {% endfor %}
+        <form action="/register" method="POST">
+            {% csrf_token %}
+            <div>
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name"> 
+            </div>
+            <div>
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name">
+        </div>
+            <div>
+            <label for="email">Email</label>
+            <input type="text" name="email">
+        </div>
+            <div>
+            <label for="password">Password</label>
+            <input type="password" name="password">
+        </div>
+            <div>
+            <label for="pw_confirmation">Confirm PW</label>
+            <input type="password" name="pw_confirmation">
+        </div>
+        <button>Register</button>
+        </form>
+
+        <h1>Login</h1>
+        <form action="/login" method="POST">
+            {% csrf_token %}
+            <div>
+                <label for="email">Email</label>
+                <input type="text" name="email">
+            </div>
+                <div>
+                <label for="password">Password</label>
+                <input type="password" name="password">
+                </div>
+                <button>Log In</button>
+        </form>
+
+
+    </body>    
+</html>

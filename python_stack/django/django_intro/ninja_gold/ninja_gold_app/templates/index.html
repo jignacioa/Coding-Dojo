@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Ninja Gold Game</title>
+    </head>
+    <body>
+       <label for="gold_count">Your Gold</label>
+       <p>{{show_gold}}</p>
+       <div>
+           <div>
+               <h1>Farm</h1>
+               <p>(earn 10-20 golds)</p>
+               <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" value="farm" name ="prize">
+                    <button>Find Gold</button>
+               </form>
+           </div>
+           <div>
+                <h1>Cave</h1>
+                <p>(earn 5-10 golds)</p>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" value="cave" name ="prize">
+                    <button>Find Gold</button>
+                </form>
+            </div>
+        <div>
+            <h1>House</h1>
+            <p>(earns 2-5 golds)</p>
+            <form action="/process_money" method="POST">
+                {% csrf_token %}
+             <input type="hidden" value="house" name ="prize">
+
+             <button>Find Gold</button>
+            </form>
+        </div>
+        <div>
+            <h1>Casino</h1>
+            <p>(earn 0-50 golds)</p>
+            <form action="/process_money" method="POST">
+                {% csrf_token %}
+             <input type="hidden" value="casino" name ="prize">
+             <button>Find Gold</button>
+            </form>
+        </div>
+        <h1>Activities</h1>
+        
+        <ul>
+            {% for activity in activities %}
+            <li>{{activity.amount}} from {{activity.location}} at {{activity.timestamp}}</li>
+            {% endfor %}
+        </ul>    
+    
+
+       </div>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Favorite Books</title>
+    </head>
+    <body>
+        <p>Updated at {{book.updated_at}}</p>
+        <form action="/books/{{book.id}}/edit" method="post">
+        {% csrf_token %}
+        <label for="title">Title</label>
+        <input type="text" name ="title" value="{{book.title}}" size="50">
+        <p>Added by: {{book.uploaded_by.first_name}} {{book.uploaded_by.last_name}}</p>
+        <p>Created on: {{book.created_at}}</p>
+        <textarea name="desc" rows="15" cols="50">{{book.desc}} </textarea><br>
+        <button>Update</button>
+        </form>
+        <form action="/books/{{book.id}}/delete">
+        <button>Delete</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    
+
+}
+
+.tabs {
+    display: flex;
+    border: 5px black solid;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100px;
+    cursor: pointer
+}
+
+.content {
+    border: 5px black solid;
+    width: 400px;
+    height: 100px;
+    margin: auto;
+    text-align: left
+}

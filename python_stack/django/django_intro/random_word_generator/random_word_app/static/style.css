@@ -1,0 +1,17 @@
+.container {
+    width: 970px;
+    text-align: center;
+    margin: auto;
+}
+
+h3 {
+    background-color: red;
+    color: white;
+    margin: 50px;
+}
+
+form {
+    border: solid black;
+    margin: 50px;
+
+}

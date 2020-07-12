@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mictlan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}"> 
+</head>
+<body>
+    <div class = "container">
+    <div class = "banner">
+        <img src="{% static 'img/banner.jpg' %}" alt="">
+    </div>
+    <h1 class="display-1">Product Submission Form</h1>
+    <form action="/dashboard">
+        <button type="Submit" class="btn btn-info">Member Dashboard</button>
+    </form>
+    <p>Please use the form below to submit a product for sale or exchange. Product will be visible to other members.</p>
+    <div class="row mt-5"></div>
+    <form action="/dashboard/newproduct/process_submission" method='POST'>
+        {% csrf_token %}
+        <div>
+            <label for="card_name">Card Name</label>
+            <input type="text" name="card_name">
+        </div>
+        <div>
+            <label for="type">Type</label>
+            <select name="type" id="">
+                <option value="select">-select type-</option>
+                <option value="Land">Land</option>
+                <option value="Creature">Creature</option>
+                <option value="Artifact">Artifact</option>
+                <option value="Artifact">Artifact Creature</option>
+                <option value="Artifact">Enchantment Creature</option>
+                <option value="Enchantment">Enchantment</option>
+                <option value="Planeswalker">Planeswalker</option>
+                <option value="Instant">Instant</option>
+                <option value="Sorcery">Sorcery</option>
+            </select>
+        </div>
+        <div>
+            <label for="color">Color</label>
+            <select name="color" id="">
+                <option value="select">-select color-</option>
+                <option value="White">White</option>
+                <option value="Blue">Blue</option>
+                <option value="Black">Black</option>
+                <option value="Red">Red</option>
+                <option value="Green">Green</option>
+                <option value="Green">Multicolored</option>
+                <option value="Green">Colorless</option>
+            </select>
+        </div>
+        <div>
+            <label for="pool">Set</label>
+            <select name="pool" id="">
+                <option value="">-select set-</option>
+                {% for pool in pools %}
+                <option value="{{pool.id}}">{{pool.title}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="price">Price</label>
+            <input type="number" name="price" value="0.00">
+        </div>
+        
+        <div>
+            <label for="quantity">Quantity</label>
+            <input type="number" name="quantity">
+        </div>
+        <div>
+            <label for="state">Card Condition</label>
+            <select name="state">
+                <option value="">-Condition-</option>
+                {% for condition in conditions %}
+                <option value="{{condition.id}}">{{condition.category}}</option>
+                {% endfor %}
+            </select>
+        </div>    
+        <div>
+            <label for="description">Description of defects if any:</label><br>
+            <textarea name="description" id="" cols="30" rows="5"></textarea> 
+        </div>
+        <button type="submit" class="btn btn-success">Submit Product</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>    
+</div>
+</body>
+</html>

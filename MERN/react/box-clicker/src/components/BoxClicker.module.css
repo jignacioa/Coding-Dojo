@@ -1,0 +1,23 @@
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+    border: 1px solid lightgray;
+    cursor: pointer;
+}
+
+.unclicked {
+    background: red
+}
+
+.clicked {
+    background: purple
+}
+
+.container {
+    width: 450px;
+    justify-content: space-around;
+    display: flex;
+}
