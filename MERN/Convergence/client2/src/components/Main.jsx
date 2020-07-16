@@ -3,6 +3,7 @@ import { navigate } from '@reach/router';
 import io from 'socket.io-client';
 import UserName from './UserName'
 import Chat from './Chat'
+import LogoutButton from './Logout'
 
 export default function Main() {
   const [newUserName, setNewUserName]=useState ('');
@@ -19,7 +20,8 @@ export default function Main() {
  
   return (
     <div>
-      <UserName onNewUser = {setCurrentUser}/>
+      <LogoutButton/>
+      <UserName onNewUser = {setCurrentUser}/><br/>
       <Chat user={newUserName}/>
     </div>
   )

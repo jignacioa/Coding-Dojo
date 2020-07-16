@@ -1,6 +1,18 @@
 const express = require('express');
-
+const cors=require('cors');
+const cookieParser=require('cookie-parser')
+require('dotenv').config({path: __dirname + '/../.env'})
+require('./config/mongoose.config');
+const userRoutes=require('./routes/users.routes')
 const app = express();
+
+app.use(cookieParser());
+app.use(express.json());
+app.use(cors({
+    credentials:true,
+    origin:'http://localhost:3000'
+}));
+userRoutes(app);
 
 const server = app.listen(4000)
 
@@ -12,19 +24,12 @@ let chatMessages=[];
 
 
 
+
 io.on('connection', socket=>{
     connectedClients++
     console.log('We have '+connectedClients+' connected!');
 
-    // socket.emit('welcome', {
-    //    userName 
-    // })
-    // socket.on('new user', newUserName => {
-    //     userName=newUserName
-    //     io.emit('name', userName)
-    // })
     socket.on('new message', data => {
-
       chatMessages.push(data)
         io.emit('updated thread', data)
     console.log(data)
