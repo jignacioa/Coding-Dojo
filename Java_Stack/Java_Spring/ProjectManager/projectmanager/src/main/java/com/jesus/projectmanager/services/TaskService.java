@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import com.jesus.projectmanager.models.Project;
 import com.jesus.projectmanager.models.Task;
 import com.jesus.projectmanager.models.User;
 import com.jesus.projectmanager.repositories.TaskRepository;
@@ -30,12 +31,13 @@ public class TaskService {
             return null;
         }
 	}
-	public Task updateTask(Long id, String task, User assignee, String priority) {
+	public Task updateTask(Long id, String task, User assignee, String priority, Project project) {
     	Optional<Task> toUpdate = taskRepository.findById(id);
     	if(toUpdate != null) {
     		toUpdate.get().setTask(task);
     		toUpdate.get().setAssignee(assignee);
     		toUpdate.get().setPriority(priority);
+    		toUpdate.get().setProject(project);
     		Task t = toUpdate.get();
     		taskRepository.save(t);
     		return toUpdate.get();

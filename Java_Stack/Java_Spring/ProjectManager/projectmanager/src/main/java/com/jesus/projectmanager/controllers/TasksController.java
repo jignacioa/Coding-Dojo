@@ -67,6 +67,8 @@ public class TasksController {
 		Task task = taskService.findTask(task_id); 
 		model.addAttribute("task", task);
 		model.addAttribute("assignees", projectService.findProject(id).getMembers());
+		model.addAttribute("project", projectService.findProject(id));
+		System.out.println(id);
 		return "/projectmanager/editTask.jsp";
 		}
 	/*@RequestMapping("projecttasks/{id}/edit")
@@ -77,16 +79,17 @@ public class TasksController {
 		model.addAttribute("users", users);
         return "/taskmanager/edit.jsp";
 	}*/
-	@RequestMapping(value="/tasks/${task.id}/edit", method=RequestMethod.PUT)
-    public String update(@Valid @ModelAttribute("task") Task task, BindingResult result, Model model) {
+	@RequestMapping(value="/projects/{id}/tasks/{task_id}/edit", method=RequestMethod.PUT)
+    public String update(@Valid @ModelAttribute("task") Task task, BindingResult result, Model model, @RequestParam("project.id") Long project_id, @PathVariable("task_id") Long task_id) {
         if (result.hasErrors()) {
-        	List<User> users = userService.allUsers();
-    		model.addAttribute("users", users);
-            return "/taskmanager/edit.jsp";
+        	List<User> assignees = userService.allUsers();
+    		model.addAttribute("assignees", assignees);
+            return "/projectmanager/editTask.jsp";
         } else {
-            taskService.updateTask(task.getId(), task.getTask(), task.getAssignee(), task.getPriority());
-            Long id = task.getId();
-            return "redirect:/tasks/" + Long.toString(id);
+            taskService.updateTask(task_id, task.getTask(), task.getAssignee(), task.getPriority(), task.getProject());
+            System.out.println(task.getId());
+            System.out.println(task.getTask());
+            return "redirect:/projects/" + Long.toString(project_id);
         }
 	}
 	

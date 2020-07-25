@@ -22,9 +22,14 @@ public class UsersController {
         this.userService = userService;
     }
     
-    @RequestMapping("/")
+    @RequestMapping("/register")
     public String registerForm(@ModelAttribute("user") User user) {
         return "/projectmanager/reg_log.jsp";
+    }
+    
+    @RequestMapping("/")
+    public String loginForm(@ModelAttribute("user") User user) {
+        return "/projectmanager/login.jsp";
     }
     
     

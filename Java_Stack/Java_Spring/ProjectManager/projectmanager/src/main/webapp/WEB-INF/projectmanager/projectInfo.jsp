@@ -5,46 +5,56 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="/css/projectinfo.css">
 <title>Insert title here</title>
 </head>
 <body>
-	<h1> <c:out value="${project.project}"/></h1>
-	<a href="/projects">Projects</a>
-	<h3><c:out value="${project.description}"/></h3>
-	<p>Manager: <c:out value="${project.projectCreator.firstname} ${project.projectCreator.lastname} "/></p>
-	<p>Team Members:</p>
-	<c:forEach items="${teamMembers}" var="teamMember">
-        	<p><c:out value= "${teamMember.firstname} ${teamMember.lastname}"/></p>
-    </c:forEach>
-	<h3>Project Tasks</h3>
-<table>
-    <thead>
-        <tr>
-            <th>Project</th>
-            <th>Assignee</th>
-   			<th>Priority</th>
-   			<th></th>
-        </tr>
-    </thead>
-    <tbody>
-    	<c:forEach items="${projectTasks}" var="projectTask"> 
-	        <tr>
-	        	<td><c:out value="${projectTask.task}"/></td>
-	            <td><c:out value="${projectTask.assignee.firstname} ${projectTask.assignee.lastname}"/></td>
-	            <td><c:out value="${projectTask.priority}"/></td>
-	            <td><form action="/tasks/${projectTask.id}" method="post">
-	            	<input type="hidden" name="project" value="${project.id}">
-				    <input type="hidden" name="_method" value="delete">
-				    <input type="submit" value="Delete">
-					</form></td>
-				<td><a href="/projects/${project.id}/tasks/${projectTask.id}/edit">Edit Task</a></td
-	        </tr>
-	    </c:forEach>
-    </tbody>
-	</table>
-	<form action="/projects/${project.id}/tasks/add" method="post">
-	    <input type="hidden">
-	    <input type="submit" value="Create Task">
-	</form>
+	<div class="container">
+		<h1 id="header">ProManager</h1>
+		<div id="project">
+			<h1><c:out value="${project.project}"/></h1>
+			<h3 id="description"><c:out value="${project.description}"/></h3>
+			<a id="projectsLink" href="/projects">Projects</a>
+		</div>
+		<div class="information">
+			<div id="team">
+				<h4>Manager:</h4>
+				<p><c:out value="${project.projectCreator.firstname} ${project.projectCreator.lastname} "/></p>
+				<h4>Team Members:</h4>
+				<c:forEach items="${teamMembers}" var="teamMember">
+			        	<p><c:out value= "${teamMember.firstname} ${teamMember.lastname}"/></p>
+			    </c:forEach>
+		    </div>
+			<table>
+		    <thead>
+		        <tr>
+		            <th>Task</th>
+		            <th>Assignee</th>
+		   			<th>Priority</th>
+		   			<th></th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		    	<c:forEach items="${projectTasks}" var="projectTask"> 
+			        <tr>
+			        	<td><c:out value="${projectTask.task}"/></td>
+			            <td><c:out value="${projectTask.assignee.firstname} ${projectTask.assignee.lastname}"/></td>
+			            <td><c:out value="${projectTask.priority}"/></td>
+			            <td><form action="/tasks/${projectTask.id}" method="post">
+			            	<input type="hidden" name="project" value="${project.id}">
+						    <input type="hidden" name="_method" value="delete">
+						    <input type="submit" value="Delete">
+							</form></td>
+						<td><a id="editLink" href="/projects/${project.id}/tasks/${projectTask.id}/edit">Edit Task</a></td>
+			        </tr>
+			    </c:forEach>
+		    </tbody>
+			</table>
+			<form action="/projects/${project.id}/tasks/add" method="post">
+		    <input type="hidden">
+		    <input type="submit" value="Create Task">
+			</form>
+		</div>
+	</div>
 </body>
 </html>

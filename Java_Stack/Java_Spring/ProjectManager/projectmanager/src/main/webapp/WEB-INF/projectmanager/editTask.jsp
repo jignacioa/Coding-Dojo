@@ -11,17 +11,18 @@
 </head>
 <body>
 <h1>Task Editing Form</h1>
-	<form:form action="/tasks/${task.id}/edit" method="post" modelAttribute="task">
+	<form:form action="/projects/${project.id}/tasks/${task.id}/edit" method="post" modelAttribute="task">
     <input type="hidden" name="_method" value="put">
+    	<form:hidden path="project.id" value="${project.id}"/>
     <p>
         <form:label path="task">Task:</form:label>
         <form:errors path="task"/>
         <form:input path="task"/>
     </p>
     <p>
-        <form:label path="assignee">Assignee:</form:label>
-        <form:errors path="assignee"/>
-        <form:select path="assignee">
+        <form:label path="assignee.id">Assignee:</form:label>
+        <form:errors path="assignee.id"/>
+        <form:select path="assignee.id">
         <c:forEach items="${assignees}" var="assignee">
         	<form:option value="${assignee.id}"><c:out value= "${assignee.firstname} ${assignee.lastname}"/></form:option>
         </c:forEach>
