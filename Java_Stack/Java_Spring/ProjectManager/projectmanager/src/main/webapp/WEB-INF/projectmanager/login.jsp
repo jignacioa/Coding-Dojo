@@ -27,7 +27,7 @@
             <input type="password" id="password" name="password"/>
         </p>
         <input type="submit" value="Login"/>
-        <p><a href="/register">Sign Up</a><p>
+        <p><a id="registerLink"  href="/register">Sign Up</a><p>
     </form> 
     </div>
     </div>

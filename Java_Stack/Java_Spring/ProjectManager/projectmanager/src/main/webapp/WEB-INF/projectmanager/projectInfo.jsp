@@ -11,10 +11,13 @@
 <body>
 	<div class="container">
 		<h1 id="header">ProManager</h1>
-		<div id="project">
+		<div id="projectsHeader">
 			<h1><c:out value="${project.project}"/></h1>
 			<h3 id="description"><c:out value="${project.description}"/></h3>
-			<a id="projectsLink" href="/projects">Projects</a>
+			<div>
+				<a id="projectsLink" href="/projects">Projects</a>
+				<a id="logout" href="/logout">Log Out</a>
+			</div>
 		</div>
 		<div class="information">
 			<div id="team">

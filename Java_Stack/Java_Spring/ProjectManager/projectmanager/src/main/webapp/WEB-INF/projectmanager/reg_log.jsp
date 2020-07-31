@@ -34,11 +34,11 @@
             <form:password path="password"/>
         </p>
         <p>
-            <form:label path="passwordConfirmation">Password Confirmation</form:label>
+            <form:label path="passwordConfirmation">Confirm Password</form:label>
             <form:password path="passwordConfirmation"/>
         </p>
         <input type="submit" value="Register"/>
-        <p><a href="/">Member Login</a></p>
+        <p><a id="cancelLink" href="/">Cancel</a></p>
     </form:form>
     </div>
     </div>
