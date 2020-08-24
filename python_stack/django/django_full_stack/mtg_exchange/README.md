@@ -1,1 +1,1 @@
-![ScreenShot](Project_Images/login_page.png)
+![ScreenShot](login_page.PNG)
