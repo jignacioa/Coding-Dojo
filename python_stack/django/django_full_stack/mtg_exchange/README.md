@@ -16,20 +16,23 @@ Below are images of some of the functioning features of the application:
 - Marketplace where registered users can browse through uploaded cards
 - A bidding square unique to each posting where buyers/seller can interact
 
+
 Integrated login/registration functionality
 ![ScreenShot](./Project_Images/login_page.PNG)
 ![ScreenShot](./Project_Images/registration_page.PNG)
+
 
 User Dashboard: Member has access to the marketplace where buying/selling takes place 
 and has the option to create a product post. Dashboard will also list the products the member
 has up for sale in the marketplace.
 ![ScreenShot](./Project_Images/dashboard.PNG)
 
+
 The seller can upload an image of the product and a description of the condition. 
 ![ScreenShot](./Project_Images/product_submission.PNG)
 ![ScreenShot](./Project_Images/posting_2.PNG)
-Examples of product postings with image.
 ![ScreenShot](./Project_Images/posting_1.PNG)
+
 
 Each job posting has a "Bidding Square" where buyers can bid on a card if the seller allows it.
 ![ScreenShot](./Project_Images/bidding_square.PNG)
