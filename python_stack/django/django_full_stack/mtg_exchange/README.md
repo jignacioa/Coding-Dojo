@@ -1,1 +1,1 @@
-![ScreenShot](login_page.PNG)
+![ScreenShot](../Project_Images/login_page.png)
