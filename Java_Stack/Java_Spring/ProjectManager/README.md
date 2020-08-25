@@ -9,13 +9,15 @@ Technologies used:
 - Spring Boot framework / Java
 - MySQL to access and manage the database
 
-# Login & Registration 
+# Login & Registration:
 ![ScreenShot](./ProManager/LogIn.PNG) 
 ![ScreenShot](./ProManager/Registration.PNG) 
 
 # Project Creation & Project Information page: 
 ### Project manager creates the project, adds team members from registered users database, creates and assigns tasks amongst team members
 ![ScreenShot](./ProManager/project_creation.gif)
+
+### Project information page:
 ![ScreenShot](./ProManager/project_info.PNG)
 
 # Task editing:
