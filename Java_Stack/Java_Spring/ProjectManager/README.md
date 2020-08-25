@@ -10,14 +10,14 @@ Technologies used:
 - MySQL to access and manage the database
 
 # Login & Registration 
-![ScreenShot](./ProManager/LogIn.PNG =250x) 
-![ScreenShot](./ProManager_images/Registration.PNG) 
+![ScreenShot](./ProManager/LogIn.PNG) 
+![ScreenShot](./ProManager/Registration.PNG) 
 
 # Project Creation & Project Information page: 
 ### Project manager creates the project, adds team members from registered users database, creates and assigns tasks amongst team members
-![ScreenShot](./ProManager_images/project_creation.gif)
-![ScreenShot](./ProManager_images/project_info.PNG)
+![ScreenShot](./ProManager/project_creation.gif)
+![ScreenShot](./ProManager/project_info.PNG)
 
 # Task editing:
 ### Tasks can be edited and deleted to fit the needs of the project
-![ScreenShot](./ProManager_images/task_editing.gif)
+![ScreenShot](./ProManager/task_editing.gif)
