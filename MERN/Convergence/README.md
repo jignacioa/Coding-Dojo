@@ -1,6 +1,6 @@
 # Convergence:
 
-Description: Chat application with integrated login and registration
+Description: Real-time chat application
 
 Technologies Used:
 
