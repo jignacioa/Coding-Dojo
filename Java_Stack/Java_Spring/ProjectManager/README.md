@@ -10,7 +10,7 @@ Technologies used:
 - MySQL to access and manage the database
 
 # Login & Registration 
-![ScreenShot](./ProManager/LogIn.PNG) 
+![ScreenShot](./ProManager/LogIn.PNG =250x) 
 ![ScreenShot](./ProManager_images/Registration.PNG) 
 
 # Project Creation & Project Information page: 
