@@ -14,7 +14,7 @@ Technologies used:
 ![ScreenShot](./ProManager/project_creation.gif)
 
 # Project information page:
-### All the project details are visible: ## Project description, team members, project manager, and tasks with details and delete/edit options
+### Project description, team members, project manager, and tasks with details and delete/edit options
 ![ScreenShot](./ProManager/project_info.PNG)
 
 # Task editing function:
