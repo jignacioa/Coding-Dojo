@@ -1,6 +1,6 @@
-#Convergence
+#Convergence:
 
-Description:
+Description
 
 -Chat application with integrated login and registration
 
