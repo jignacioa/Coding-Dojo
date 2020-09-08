@@ -25,7 +25,9 @@
         <div class= "col-lg-6">
             <label for="search">Search</label>
             <input type="search">
+            <a href = "/checkout">Checkout</a>
         </div>
+        <p>Shopping Cart: {{quantity}}</p>
     </div>
     <div class = "row">
         <div class = col-lg-6>
@@ -46,7 +48,6 @@
                 <th>Quantity</th>
                 <th>Seller</th>
                 <th></th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -55,24 +56,22 @@
                 <td>{{product.card_name}}</td>
                 <td>${{product.price}}</td>
                 <td>
-                    <select name="quantity" id="">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
+                    <form action="/dashboard/listings/{{product.id}}/addtocart" method='POST'>
+                        {% csrf_token %}
+                        <select name="quantity" id="">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <button type="submit" class="btn btn-warning">Add to Cart</button>
+                    </form>
                 </td>
                 <td>{{product.created_by.first_name}}</td>
                 <td>
                     <form action="/dashboard/listings/{{product.id}}">
                         <button type="submit" class="btn btn-primary">View</button>
-                    </form>
-                </td>
-                <td>
-                    <form action="/dashboard/listings/addtocart" method='post'>
-                        <input type='hidden' value="{{product.id}}" name="product">
-                        <button type="submit" class="btn btn-warning">Add to Cart</button>
                     </form>
                 </td>
             </tr>

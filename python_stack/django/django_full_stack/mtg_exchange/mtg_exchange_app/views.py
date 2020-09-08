@@ -23,7 +23,7 @@ def process_login(request):
 
     return redirect("/dashboard")  
 
-def logout(requuest):
+def logout(request):
     request.session.clear()
     return redirect("/")       
 
@@ -111,9 +111,13 @@ def process_product_image(request):
     return redirect("/dashboard/listings")    
 
 def listings(request):
-
+    if 'quantity' not in request.session:
+        request.session['quantity'] = 0 
+    if 'items' not in request.session:
+        request.session['items'] = []
     context = {
-        'products': Product.objects.all
+        'products': Product.objects.all,
+        'quantity': request.session['quantity']
     }
     return render(request, 'listings.html', context)  
 
@@ -137,15 +141,26 @@ def process_comment(request, product_id):
 
     return redirect('/dashboard/listings/'f'{product_id}')
 
-# def addtocart(request):
-#     product_id = request.POST['product']
-#     product = Product.objects.get(id=product_id)
+def addtocart(request, product_id):
+    product = Product.objects.get(id=product_id)
+    quantity = request.POST['quantity']
+    print(quantity)
+    request.session['items'].append([product_id, quantity])
+    print(request.session['items'])
+    request.session['quantity']+=int(quantity)
+    return redirect(request.META.get('HTTP_REFERER'))
 
-#     buyer = User.objects.get(id = request.session['user_id'])
-#     order = Order.objects.create(
-#         order_by = buyer
-#     )
-      
+def checkout(request):
+    checkout_info = request.session['items']
+    for info in checkout_info:
+        product_id = info[0]
+        print(product_id)
+        product = Product.objects.get(id = product_id)
+        print(product.card_name)
+    context = {
+        
+    }
 
-# Create your views here.
+   
 
+    return render(request, 'checkout.html')
