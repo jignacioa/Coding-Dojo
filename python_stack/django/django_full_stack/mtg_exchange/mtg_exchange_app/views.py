@@ -113,8 +113,6 @@ def process_product_image(request):
 def listings(request):
     if 'quantity' not in request.session:
         request.session['quantity'] = 0 
-    if 'items' not in request.session:
-        request.session['items'] = []
     context = {
         'products': Product.objects.all,
         'quantity': request.session['quantity']
@@ -141,26 +139,39 @@ def process_comment(request, product_id):
 
     return redirect('/dashboard/listings/'f'{product_id}')
 
-def addtocart(request, product_id):
+
+def cart(request, product_id):
+    if 'cart' not in request.session:
+        request.session['cart'] = {}
+    cart = request.session['cart']
+    print(cart)
     product = Product.objects.get(id=product_id)
     quantity = request.POST['quantity']
-    print(quantity)
-    request.session['items'].append([product_id, quantity])
-    print(request.session['items'])
-    request.session['quantity']+=int(quantity)
+    product_info = {
+            'card_name': product.card_name,
+            'price': str(product.price),
+            'quantity': quantity
+        }
+    request.session['cart'][str(product_id)] = product_info
+    request.session['cart'] = cart
+    print(cart)
     return redirect(request.META.get('HTTP_REFERER'))
 
 def checkout(request):
-    checkout_info = request.session['items']
-    for info in checkout_info:
-        product_id = info[0]
-        print(product_id)
-        product = Product.objects.get(id = product_id)
-        print(product.card_name)
+    checkout_cart = request.session['cart']
+    order_total = 0
+    items = 0
+    print(checkout_cart)
+    for id in checkout_cart:
+        product = Product.objects.get(id = id)
+        order_total+=product.price
+        items+=product.quantity
+        print(product)
+    print(order_total)
     context = {
-        
+        'order_total': order_total,
+        'items': items
     }
 
-   
-
-    return render(request, 'checkout.html')
+    
+    return render(request, 'checkout.html', context)
