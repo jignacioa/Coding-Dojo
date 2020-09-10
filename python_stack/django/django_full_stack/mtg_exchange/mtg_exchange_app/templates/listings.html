@@ -12,74 +12,83 @@
 </head>
 <body>
     <div class = ".container">
-    <div class = "banner">
+    <!--div class = "banner">
         <img src="{% static 'img/banner.jpg' %}" alt="">
-    </div>
+    </div-->
     <div class = "row">
-        <div class= "col-lg-6">
-            <h1 class="display-1">Marketplace</h1>
+        <div class= "col">
+            <h1 class="display-1 header">Mictlan</h1>
             <form action="/dashboard">
                 <button type="Submit" class="btn btn-info">Member Dashboard</button>
             </form>
         </div>
-        <div class= "col-lg-6">
-            <label for="search">Search</label>
-            <input type="search">
-            <a href = "/checkout">Checkout</a>
+            
+    </div>
+    <div class="row">
+        <div class="col float-right">
+            <div>
+                <h3>Shopping Cart</h3>
+                <p>{{items}}</p>
+                <p>Order total: ${{order_total}}</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Qty.</th>
+                            <th>Card</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for id, product_info in cart.items %}
+                        <tr>
+                            <td>{{product_info.quantity}}</td>
+                            <td>{{product_info.card_name}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a href = "/checkout">Checkout</a>
+            </div>
         </div>
-        <p>Shopping Cart: {{quantity}}</p>
     </div>
     <div class = "row">
-        <div class = col-lg-6>
-    <h3>Categories</h3>
-    <select name="categories" id="">
-        <option value="">Type</option>
-        <option value="">Color</option>
-        <option value="">Seller</option>
-        <option value="">Price</option>
-    </select>
+        {% for product in products %}
+        <div class = "col-7 d-flex justify-content-center align-items-center mb-3 product">
+            <img src='/media/product_image/{{product.image}}' width="132" height="184">
+            <table>
+                    <tr>
+                        <th>Set: </th>
+                        <td>{{product.pool.title}}</td>
+                    </tr>
+                        <th>Type: </th>
+                        <td>{{product.permanent_type}}</td>
+                    </tr>
+                        <th>Color: </th>
+                        <td>{{product.color}}</td>
+                    </tr>
+                        <th>Availability: </th>
+                        <td>{{product.quantity}}</td>
+                    </tr>
+                        <th>Price: </th>
+                        <td>{{product.price}}</td>
+                    </tr>
+                        <th>Description: </th>
+                        <td>{{product.description}}</td>
+                    </tr>
+            </table>
+            <form action="/dashboard/listings/{{product.id}}/addtocart" method='POST'>
+                {% csrf_token %}
+                <select name="quantity" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="submit" class="btn btn-warning">Add to Cart</button>
+            </form>
+        </div>
+        {% endfor %}
     </div>
-    <div class = col-lg-6>
-    <table>
-        <thead>
-            <tr>
-                <th>Card</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Seller</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for product in products %}
-            <tr>
-                <td>{{product.card_name}}</td>
-                <td>${{product.price}}</td>
-                <td>
-                    <form action="/dashboard/listings/{{product.id}}/addtocart" method='POST'>
-                        {% csrf_token %}
-                        <select name="quantity" id="">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <button type="submit" class="btn btn-warning">Add to Cart</button>
-                    </form>
-                </td>
-                <td>{{product.created_by.first_name}}</td>
-                <td>
-                    <form action="/dashboard/listings/{{product.id}}">
-                        <button type="submit" class="btn btn-primary">View</button>
-                    </form>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-</div>
     <a href="/dashboard">Back to Dashboard</a>
 </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

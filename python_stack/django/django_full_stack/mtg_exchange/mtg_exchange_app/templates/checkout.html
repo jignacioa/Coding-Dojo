@@ -15,8 +15,8 @@
 <body>
 <div class = "container">
         <h1 class = "display-1">Mictlan</h1>
-    {% for item in checkout_items %}
-    <p>{{item.0}} {{item.1}}</p>
+    {% for id, product_info in cart.items %}
+    <p>{{product_info.card_name}} {{product_info.quantity}}</p>
     <!--img src='/media/product_image/{{item.2}}' width="265" height="370"-->
     {% endfor %}
     <div>
