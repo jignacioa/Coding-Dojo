@@ -1,9 +1,14 @@
 from django.shortcuts import render, redirect
-from .models import User, Product, Comment, Condition, Order, Pool
+from .models import User, Product, Comment, Condition, Order, Pool, Address, Order, Card, Item
 import bcrypt
 #import Card
 from django.contrib import messages
 from django.conf import settings
+
+def home(request):
+
+    return render(request, 'home.html')
+
 def memberlogin(request):
 
     return render(request, 'memberlogin.html')
@@ -113,7 +118,8 @@ def process_product_image(request):
 def listings(request):
     if 'items' not in request.session:
         request.session['items'] = 0 
-    
+    if 'cart' not in request.session:
+        request.session['cart'] = {}
     context = {
         'products': Product.objects.all,
         'items': request.session['items'],
@@ -175,7 +181,7 @@ def cart(request, product_id):
 
     return redirect(request.META.get('HTTP_REFERER'))
 
-def checkout(request):
+def cartreview(request):
    
     context = {
         'order_total': request.session.get('order_total'),
@@ -184,4 +190,75 @@ def checkout(request):
     }
     print(request.session.get('cart'))
     
+    return render(request, 'cartreview.html', context)
+
+def checkout(request):
+    context = {
+        'order_total': request.session.get('order_total'),
+        'items': request.session.get('items'),
+        'cart': request.session.get('cart')
+    }
     return render(request, 'checkout.html', context)
+
+def process_payment(request):
+    user = User.objects.get(id=request.session['user_id'])
+    cart = request.session['cart']
+
+    address = Address.objects.create(
+        address = request.POST['address'],
+        city = request.POST['city'],
+        state = request.POST['state'],
+        zip = request.POST['zip']
+    )
+    
+    card = Card.objects.create(
+        number = request.POST['number'],
+        code = request.POST['code'],
+        exp = request.POST['exp'],
+        name = request.POST['name'],
+        address = address
+    )
+    new_order = Order.objects.create(
+        quantity_ordered= request.session['items'],
+        total_price= request.session['order_total'],
+        card = card,
+        address = address,
+        order_by = User.objects.get(id=request.session['user_id']),
+    )
+
+
+    for id, product_info in cart.items():
+        print(id,product_info)
+        card = Product.objects.get(id=id)
+        new_item = Item.objects.create(
+            card = card,
+            quantity = product_info.get('quantity'),
+            price = product_info.get('price'),
+            order = new_order
+        )
+        new_order.order_items.add(new_item)
+
+    request.session['neworder_id'] = new_order.id
+    new_order.save()
+    
+    print(new_order.id)
+    return redirect('/checkout/confirmation')
+
+def confirmation(request):
+    del request.session['cart']
+    del request.session['neworder_id']
+    del request.session['order_total'] 
+    del request.session['items']
+    #order = Order.objects.get(id=request.session['neworder_id'])
+    #order_items = order.order_items.all()
+    #print(request.session['neworder_id'])
+
+    #context = {
+        #'order_items': order_items
+    #}
+    return render(request, 'confirmation.html')
+
+def done(request):
+    
+
+    return redirect('/dashboard/listings')

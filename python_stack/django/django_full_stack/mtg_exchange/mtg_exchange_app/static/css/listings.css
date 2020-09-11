@@ -1,16 +1,7 @@
-table {
-    border-collapse: collapse;
-  }
-  th,
-  td {
-    border: 1px #cecfd5;
-    padding: 10px 3px;
-  }
+
 
   .header {
     background-color: rgb(129, 50, 39);
   }
 
-  .product {
-    border: 5px solid black;
-  }
+ 

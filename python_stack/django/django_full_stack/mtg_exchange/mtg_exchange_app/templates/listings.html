@@ -11,12 +11,11 @@
     <link rel="stylesheet" href="{% static 'css/listings.css' %}"> 
 </head>
 <body>
-    <div class = ".container">
+    <div class = "container-fluid">
     <!--div class = "banner">
         <img src="{% static 'img/banner.jpg' %}" alt="">
     </div-->
-    <div class = "row">
-        <div class= "col">
+        <div class="sticky-top">
             <h1 class="display-1 header">Mictlan</h1>
             <form action="/dashboard">
                 <button type="Submit" class="btn btn-info">Member Dashboard</button>
@@ -24,37 +23,14 @@
         </div>
             
     </div>
-    <div class="row">
-        <div class="col float-right">
-            <div>
-                <h3>Shopping Cart</h3>
-                <p>{{items}}</p>
-                <p>Order total: ${{order_total}}</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Qty.</th>
-                            <th>Card</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for id, product_info in cart.items %}
-                        <tr>
-                            <td>{{product_info.quantity}}</td>
-                            <td>{{product_info.card_name}}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                <a href = "/checkout">Checkout</a>
-            </div>
-        </div>
-    </div>
-    <div class = "row">
+    <div class = "row mt-5">
+        <div class="col-md-10">
+        <div class ="row">
         {% for product in products %}
-        <div class = "col-7 d-flex justify-content-center align-items-center mb-3 product">
+        <div class = "col-md-5 d-flex mb-5 ml-4 product">
             <img src='/media/product_image/{{product.image}}' width="132" height="184">
-            <table>
+            <div>
+            <table class="ml-5 mb-2">
                     <tr>
                         <th>Set: </th>
                         <td>{{product.pool.title}}</td>
@@ -75,7 +51,7 @@
                         <td>{{product.description}}</td>
                     </tr>
             </table>
-            <form action="/dashboard/listings/{{product.id}}/addtocart" method='POST'>
+            <form class="ml-5" action="/dashboard/listings/{{product.id}}/addtocart" method='POST'>
                 {% csrf_token %}
                 <select name="quantity" id="">
                     <option value="1">1</option>
@@ -87,7 +63,34 @@
                 <button type="submit" class="btn btn-warning">Add to Cart</button>
             </form>
         </div>
+        </div>
         {% endfor %}
+    </div>
+    </div>
+    <div class="col">
+        <div>
+            <h3>Shopping Cart</h3>
+            <p>{{items}}</p>
+            <p>Order total: ${{order_total}}</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Qty.</th>
+                        <th>Card</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for id, product_info in cart.items %}
+                    <tr>
+                        <td>{{product_info.quantity}}</td>
+                        <td>{{product_info.card_name}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href = "/cart">Checkout</a>
+        </div>
+    </div>
     </div>
     <a href="/dashboard">Back to Dashboard</a>
 </div>

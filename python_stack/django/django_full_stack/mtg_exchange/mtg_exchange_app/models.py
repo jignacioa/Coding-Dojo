@@ -88,31 +88,59 @@ class Product(models.Model):
     state = models.ForeignKey(Condition, related_name="products_under_condition", on_delete=models.CASCADE)
     #state will be an instance of the condition class
     created_by = models.ForeignKey(User, related_name="posts_uploaded", on_delete=models.CASCADE)
-
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     objects = ProductManager()
 
-
-class Order(models.Model):
-    quantity_ordered = models.IntegerField()
-    total_price = models.DecimalField(decimal_places=2, max_digits=6)
-    order_by = models.ForeignKey(User, related_name="orders_made", on_delete=models.CASCADE)
-    products = models.ManyToManyField(Product, related_name="in_order")
-    
+class Address(models.Model):
+    address = models.CharField(max_length=60)
+    city = models.CharField(max_length=60)
+    state = models.CharField(max_length=2)
+    zip = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
 
 
 class Comment(models.Model):
     posted_by = models.ForeignKey(User, related_name = 'user_comments', on_delete=models.CASCADE)
     body = models.TextField()
     product = models.ForeignKey(Product, related_name = "inquiries", on_delete=models.CASCADE)
-
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     objects = CommentManager()
+
+
+class Card(models.Model):
+    number = models.IntegerField()
+    code = models.IntegerField()
+    exp = models.DateField()
+    name = models.CharField(max_length=60)
+    address = models.ForeignKey(Address, related_name = "cards", on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+
+class Order(models.Model):
+    quantity_ordered = models.IntegerField()
+    total_price = models.DecimalField(decimal_places=2, max_digits=6)
+    card = models.ForeignKey(Card, related_name="orders", on_delete=models.CASCADE)
+    order_by = models.ForeignKey(User, related_name="orders_made", on_delete=models.CASCADE)
+    address = models.ForeignKey(Address, related_name="orders", on_delete=models.CASCADE )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+class Item(models.Model):
+    card = models.ForeignKey(Product, on_delete = models.CASCADE)
+    quantity = models.IntegerField()
+    price = models.DecimalField(decimal_places=2, max_digits=5)
+    order = models.ForeignKey(Order, related_name="order_items", on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+
+
 
 
