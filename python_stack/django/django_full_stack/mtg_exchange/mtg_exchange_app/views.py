@@ -15,7 +15,7 @@ def memberlogin(request):
 
 def process_login(request):
     potential_login = User.objects.filter(email=request.POST['email'])
-    
+    print('checked email')
     if len(potential_login) == 0:
         messages.error(request, "Please check email and password")
         return redirect("/")

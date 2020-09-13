@@ -15,20 +15,36 @@
     <!--div class = "banner">
         <img src="{% static 'img/banner.jpg' %}" alt="">
     </div-->
-        <div class="sticky-top">
+    <div class="sticky-top">
             <h1 class="display-1 header">Mictlan</h1>
-            <form action="/dashboard">
-                <button type="Submit" class="btn btn-info">Member Dashboard</button>
-            </form>
-        </div>
-            
-    </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/dashboard/listings">Marketplace</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/login">Login/Registration</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
     <div class = "row mt-5">
         <div class="col-md-10">
         <div class ="row">
         {% for product in products %}
         <div class = "col-md-5 d-flex mb-5 ml-4 product">
+            <a href="/dashboard/listings/{{product.id}}">
             <img src='/media/product_image/{{product.image}}' width="132" height="184">
+            </a>
             <div>
             <table class="ml-5 mb-2">
                     <tr>
@@ -47,8 +63,8 @@
                         <th>Price: </th>
                         <td>{{product.price}}</td>
                     </tr>
-                        <th>Description: </th>
-                        <td>{{product.description}}</td>
+                        <th>Condition: </th>
+                        <td>{{product.state.category}}</td>
                     </tr>
             </table>
             <form class="ml-5" action="/dashboard/listings/{{product.id}}/addtocart" method='POST'>

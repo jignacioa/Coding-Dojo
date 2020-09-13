@@ -10,49 +10,86 @@
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}"> 
 </head>
 <body>
-    <div class = "container">
-    <div class = "banner">
-        <img src="{% static 'img/banner.jpg' %}" alt="">
-    </div>
+    <div class = "container-fluid">
     <h1 class="display-1">Product Submission Form</h1>
-    <form action="/dashboard">
-        <button type="Submit" class="btn btn-info">Member Dashboard</button>
-    </form>
     <p>Please use the form below to submit a product for sale or exchange. Product will be visible to other members.</p>
-    <div class="row mt-5"></div>
     <form action="/dashboard/newproduct/process_submission" method='POST'>
         {% csrf_token %}
-        <div>
+        <div class="row">
+        <div class="col">
             <label for="card_name">Card Name</label>
             <input type="text" name="card_name">
         </div>
-        <div>
-            <label for="type">Type</label>
-            <select name="type" id="">
-                <option value="select">-select type-</option>
-                <option value="Land">Land</option>
-                <option value="Creature">Creature</option>
-                <option value="Artifact">Artifact</option>
-                <option value="Artifact">Artifact Creature</option>
-                <option value="Artifact">Enchantment Creature</option>
-                <option value="Enchantment">Enchantment</option>
-                <option value="Planeswalker">Planeswalker</option>
-                <option value="Instant">Instant</option>
-                <option value="Sorcery">Sorcery</option>
-            </select>
+        <div class="col">
+            <label for="quantity">Quantity</label>
+            <input type="number" name="quantity">
         </div>
+        <div class="col">
+            <label for="price">Price</label>
+            <input type="number" name="price" value="0.00">
+        </div>
+        </div>
+        <div>  
+            <label>Type:</label>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Land" name="type">
+                <label class="form-check-label">Land</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Creature" name="type">
+                <label class="form-check-label">Creature</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Artifact" name="type">
+                <label class="form-check-label">Artifact</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Enchantment" name="type">
+                <label class="form-check-label">Enchantment</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Planeswalker" name="type">
+                <label class="form-check-label">Planeswalker</label>
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Instant" name="type"> 
+                <label class="form-check-label">Instant</label> 
+                </div>
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Sorcery" name="type">
+                <label class="form-check-label">Sorcery</label>
+                </div>
+            </div>
         <div>
-            <label for="color">Color</label>
-            <select name="color" id="">
-                <option value="select">-select color-</option>
-                <option value="White">White</option>
-                <option value="Blue">Blue</option>
-                <option value="Black">Black</option>
-                <option value="Red">Red</option>
-                <option value="Green">Green</option>
-                <option value="Green">Multicolored</option>
-                <option value="Green">Colorless</option>
-            </select>
+            <label>Color</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="White" name="color">
+                <label class="form-check-label">White</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="White" name="color">
+                <label class="form-check-label">White</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="White" name="color">
+                <label class="form-check-label">White</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="White" name="color">
+                <label class="form-check-label">White</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="White" name="color">
+                <label class="form-check-label">White</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="White" name="color">
+                <label class="form-check-label">White</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="White" name="color">
+                <label class="form-check-label">White</label>
+            </div>
         </div>
         <div>
             <label for="pool">Set</label>
@@ -62,15 +99,6 @@
                 <option value="{{pool.id}}">{{pool.title}}</option>
                 {% endfor %}
             </select>
-        </div>
-        <div>
-            <label for="price">Price</label>
-            <input type="number" name="price" value="0.00">
-        </div>
-        
-        <div>
-            <label for="quantity">Quantity</label>
-            <input type="number" name="quantity">
         </div>
         <div>
             <label for="state">Card Condition</label>
