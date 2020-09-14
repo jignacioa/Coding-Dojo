@@ -182,11 +182,12 @@ def cart(request, product_id):
     return redirect(request.META.get('HTTP_REFERER'))
 
 def cartreview(request):
-   
+    
     context = {
         'order_total': request.session.get('order_total'),
         'items': request.session.get('items'),
-        'cart': request.session.get('cart')
+        'cart': request.session.get('cart'),
+        'products': Product.objects.all
     }
     print(request.session.get('cart'))
     
@@ -196,7 +197,8 @@ def checkout(request):
     context = {
         'order_total': request.session.get('order_total'),
         'items': request.session.get('items'),
-        'cart': request.session.get('cart')
+        'cart': request.session.get('cart'),
+        'products': Product.objects.all
     }
     return render(request, 'checkout.html', context)
 

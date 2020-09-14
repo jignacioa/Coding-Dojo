@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mictlan</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}"> 
     <link rel="stylesheet" href="{% static 'css/listings.css' %}"> 
 </head>
 <body>
@@ -45,27 +44,30 @@
             <a href="/dashboard/listings/{{product.id}}">
             <img src='/media/product_image/{{product.image}}' width="132" height="184">
             </a>
-            <div>
-            <table class="ml-5 mb-2">
+            <div class="ml-5">
+                <p class="mb-0">{{product.card_name}}</p>
+                <p>{{product.pool.title}}</p>
+            <table class="mb-2">
+                <tbody>
                     <tr>
-                        <th>Set: </th>
-                        <td>{{product.pool.title}}</td>
-                    </tr>
-                        <th>Type: </th>
                         <td>{{product.permanent_type}}</td>
                     </tr>
-                        <th>Color: </th>
+                    <tr>
                         <td>{{product.color}}</td>
                     </tr>
+                    <tr>
                         <th>Availability: </th>
                         <td>{{product.quantity}}</td>
                     </tr>
+                    <tr>
                         <th>Price: </th>
-                        <td>{{product.price}}</td>
+                        <td>${{product.price}}</td>
                     </tr>
+                    <tr>
                         <th>Condition: </th>
                         <td>{{product.state.category}}</td>
                     </tr>
+                </tbody>
             </table>
             <form class="ml-5" action="/dashboard/listings/{{product.id}}/addtocart" method='POST'>
                 {% csrf_token %}
@@ -86,13 +88,11 @@
     <div class="col">
         <div>
             <h3>Shopping Cart</h3>
-            <p>{{items}}</p>
-            <p>Order total: ${{order_total}}</p>
+           
             <table>
                 <thead>
                     <tr>
-                        <th>Qty.</th>
-                        <th>Card</th>
+                        <th>Items {{items}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -104,6 +104,7 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <p>Order total: ${{order_total}}</p>
             <a href = "/cart">Checkout</a>
         </div>
     </div>

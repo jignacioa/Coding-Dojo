@@ -24,8 +24,13 @@
             <h4>Review order</h4>
             {% for id, product_info in cart.items %}
             <p>{{product_info.card_name}}</p>
-            <img src='/media/product_image/{{product_info.image}}' width="132" height="184">
-            <form action="dashboard/listings/{{id}}/addtocart" >
+                {% for product in products %}
+                    {% if product.id|slugify == id %}
+                        <img src='/media/product_image/{{product.image}}' width="132" height="184">
+                    {% endif %}
+                {% endfor %}
+            <form action="dashboard/listings/{{id}}/addtocart" method='POST'>
+                {% csrf_token %}
                 <label for="quantity">Qty.</label>
                 <input type="number" value={{product_info.quantity}} name="quantity">
                 <button type="submit">Change</button>
