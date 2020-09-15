@@ -1,11 +1,26 @@
 
 
   .header {
-    background-color: rgb(129, 50, 39);
+    background-color: rgb(128,0,2);
     margin-bottom: 0;
+    color: white;
   }
 
   .cart {
-    left: 500px
+    border: solid 2px rgb(83,163,187);
+    border-radius: 15px
+  }
+
+  #checkout-link {
+    background-color: rgb(86,160,4);
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
   }
  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
