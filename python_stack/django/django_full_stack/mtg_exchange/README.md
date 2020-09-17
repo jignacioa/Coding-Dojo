@@ -11,32 +11,35 @@ and fit the overarching theme of the application.
 
 
 Below are images of some features of the application: 
-- Account registration
+
 - Product submission form that allows user to upload a product with an image and description
-- Marketplace where registered users can browse through uploaded cards
+- Marketplace where rusers can browse through uploaded cards. Only registered users can buy/sell
+- Login/Registration 
+- Full shopping cart and checkout functionality 
 
 
-Integrated login/registration functionality
+Main Page
+![ScreenShot](./Project_Images/main.PNG)
+
+Full Cart Functionality 
+- Add to cart from list of cards
+- Review cart
+![ScreenShot](./Project_Images/cart.PNG)
+![ScreenShot](./Project_Images/review.PNG)
 
 
-
-User Dashboard: Member has access to the marketplace where buying/selling takes place 
-and has the option to create a product post. Dashboard will also list the products the member
-has up for sale in the marketplace.
-![ScreenShot](./Project_Images/dashboard.PNG)
-
+Checkout and confirmation with order # (in this case it is the ID assigned in the database)
+Each job posting has a "Bidding Square" where buyers can bid on a card if the seller allows it.
+![ScreenShot](./Project_Images/payment.PNG)
+![ScreenShot](./Project_Images/confirmation.PNG)
 
 The seller can upload an image of the product, description of the condition and all the information
 pertaining to the card. 
-![ScreenShot](./Project_Images/product_submission.PNG)
-![ScreenShot](./Project_Images/posting_2.PNG)
-![ScreenShot](./Project_Images/posting_1.PNG)
+![ScreenShot](./Project_Images/submission-form.PNG)
+
+Integrated login/registration to allow buying/selling
+![ScreenShot](./Project_Images/login.PNG)
+![ScreenShot](./Project_Images/registration.PNG)
 
 
-Each job posting has a "Bidding Square" where buyers can bid on a card if the seller allows it.
-![ScreenShot](./Project_Images/bidding_square.PNG)
-
-
-Marketplace:
-![ScreenShot](./Project_Images/marketplace.PNG)
 
