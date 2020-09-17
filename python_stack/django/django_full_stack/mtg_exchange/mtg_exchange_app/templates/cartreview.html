@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Megrim&display=swap">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/listings.css' %}"> 
     <title>Mictlan</title>
@@ -14,28 +14,26 @@
 </head>
 <body>
 <div class = "container-fluid">
-    <div>
-            <h1 class = "display-1 header">Mictlan</h1>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/dashboard/listings">Marketplace</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/login">Login/Registration</a>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
-    </div>
+    <div class="header sticky-top">
+        <h1 class="display-1 ml-5">Mictlan</h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">
+              <img class="mr-3" src="{% static 'img/cuahutli.png' %}" width="30" height="30" class="d-inline-block align-top">Mictlan</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="/dashboard/listings">Marketplace</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/login">Login/Registration</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
     <h4 class= "mt-3">Review order</h4>
     <div class="row">
         <div class="col">
@@ -69,7 +67,8 @@
                 {% endfor %}
             </ul>
             <h4>Order total: ${{order_total}} USD</h4>
-            <a id="checkout-link" href="/checkout">Checkout</a> 
+            <a class="checkout-link mb-2" href="/checkout">Checkout</a> 
+            <a class="emptycart-link" href="/cart/empty">Empty cart</a>
             </div>
         </div>
     </div>

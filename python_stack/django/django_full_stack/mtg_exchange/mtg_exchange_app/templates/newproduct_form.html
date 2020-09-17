@@ -6,31 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mictlan</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Megrim&display=swap">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/submissionform.css' %}"> 
 </head>
 <body>
     <div class = "container-fluid">
-        <h1 class="display-1 header">Mictlan</h1>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/dashboard/listings">Marketplace</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/login">Login/Registration</a>
-                </li>
-              </ul>
+        <div class="header sticky-top">
+            <h1 class="display-1 ml-5">Mictlan</h1>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="">
+                  <img class="mr-3" src="{% static 'img/cuahutli.png' %}" width="30" height="30" class="d-inline-block align-top">Mictlan</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/dashboard/listings">Marketplace</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/login">Login/Registration</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
             </div>
-          </nav>
         <h3 class="mt-2 mb-5">Card Submission Form</h3>
         <form action="/dashboard/newproduct/process_submission" method='POST'>
             {% csrf_token %}

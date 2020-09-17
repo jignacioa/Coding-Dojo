@@ -1,17 +1,20 @@
 
-
-  .header {
-    background-color: rgb(128,0,2);
-    margin-bottom: 0;
-    color: white;
+.header {
+  background-color: rgb(128,0,2);
+  margin-bottom: 0;
+  color: white;
   }
 
-  .cart {
-    border: solid 2px rgb(83,163,187);
-    border-radius: 15px
+.header h1 {
+    font-family: 'Megrim', serif;
+}
+
+.cart {
+    border: solid 2px #53a3bb;
+    border-radius: 15px;
   }
 
-  #checkout-link {
+.checkout-link {
     background-color: rgb(86,160,4);
     color:white;
     display: flex;
@@ -19,8 +22,24 @@
     align-items: center;
     height: 45px;
   }
+
+.emptycart-link {
+    background-color: rgb(245,245,245);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+  }
  
-  ul {
+ul {
     list-style-type: none;
     padding-left: 0;
   }
+
+footer {
+  color: white;
+  background-color: rgb(128,0,2);
+  font-size: 12px;
+  padding: 10px;
+}

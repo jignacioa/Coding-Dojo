@@ -26,7 +26,7 @@ def process_login(request):
 
     request.session['user_id'] = potential_login[0].id
 
-    return redirect("/dashboard")  
+    return redirect("/dashboard/listings")  
 
 def logout(request):
     request.session.clear()
@@ -60,7 +60,7 @@ def process_registration(request):
 
     request.session['user_id'] = created_user.id
     print(request.session['user_id'])
-    return redirect('/dashboard')
+    return redirect('/dashboard/listings')
 
 def dashboard(request):
     logged_user = User.objects.get(id = request.session['user_id'] )    
@@ -71,6 +71,9 @@ def dashboard(request):
     return render(request, 'dashboard.html', context)
 
 def newproduct(request):
+    if 'user_id' not in request.session:
+        return redirect('/login')
+        
     context = {
         'conditions': Condition.objects.all(),
         'pools': Pool.objects.all()
@@ -120,6 +123,8 @@ def listings(request):
         request.session['items'] = 0 
     if 'cart' not in request.session:
         request.session['cart'] = {}
+    if 'order_total' not in request.session:
+        request.session['order_total'] = 0 
     context = {
         'products': Product.objects.all,
         'items': request.session['items'],
@@ -129,12 +134,23 @@ def listings(request):
     return render(request, 'listings.html', context)  
 
 def view_product(request, product_id):
+
+    if 'items' not in request.session:
+        request.session['items'] = 0 
+    if 'cart' not in request.session:
+        request.session['cart'] = {}
+    if 'order_total' not in request.session:
+        request.session['order_total'] = 0 
     card = Product.objects.get(id = product_id)
     comments = card.inquiries.all()
     context = {
+        'items': request.session['items'],
+        'cart': request.session['cart'],
+        'order_total': request.session.get('order_total'),
         'card': card,
         'comments': comments
     }
+    
     return render(request, 'card.html', context)
 
 def process_comment(request, product_id):
@@ -193,6 +209,13 @@ def cartreview(request):
     
     return render(request, 'cartreview.html', context)
 
+def emptycart(request):
+    del request.session['cart']
+    del request.session['items']
+    del request.session['order_total'] 
+
+    return redirect('/dashboard/listings')
+
 def checkout(request):
     context = {
         'order_total': request.session.get('order_total'),
@@ -241,26 +264,32 @@ def process_payment(request):
         new_order.order_items.add(new_item)
 
     request.session['neworder_id'] = new_order.id
+
     new_order.save()
     
-    print(new_order.id)
+    del request.session['cart']
+    del request.session['order_total'] 
+    del request.session['items']
     return redirect('/checkout/confirmation')
 
 def confirmation(request):
-    del request.session['cart']
-    del request.session['neworder_id']
-    del request.session['order_total'] 
-    del request.session['items']
-    #order = Order.objects.get(id=request.session['neworder_id'])
-    #order_items = order.order_items.all()
-    #print(request.session['neworder_id'])
-
-    #context = {
-        #'order_items': order_items
-    #}
-    return render(request, 'confirmation.html')
-
-def done(request):
+    print(request.session['neworder_id'])
+    order = Order.objects.get(id=request.session['neworder_id'])
+    print(order)
+    order_items = order.order_items.all()
     
+    context = {
+        'order_number': order.id,
+        'order_items': order_items,
+        'quantity_ordered': order.quantity_ordered,
+        'total_price': order.total_price
+    }
+
+   
+    return render(request, 'confirmation.html', context)
+
+def reset(request):
+
+    del request.session['neworder_id']
 
     return redirect('/dashboard/listings')

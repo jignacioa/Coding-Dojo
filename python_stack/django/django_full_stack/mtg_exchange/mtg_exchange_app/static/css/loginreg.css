@@ -1,6 +1,12 @@
+
 .header {
-    background-color: rgb(129, 50, 39);
+    background-color: rgb(128,0,2);
     margin-bottom: 0;
+    color: white; 
+  }
+  
+.header h1 {
+    font-family: 'Megrim', serif;
 }
 
 .login_input {
@@ -10,3 +16,31 @@
 .register label, input {
     display:block;
 }
+
+.register-link {
+    background-color:rgb(254,184,28);
+    color: rgb(85,85,85);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+#register-message {
+    color: rgb(85,85,85);
+    margin-top: 10px;
+}
+
+footer {
+    color: white;
+    background-color: rgb(128,0,2);
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }

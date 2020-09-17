@@ -1,0 +1,52 @@
+
+
+.header {
+    background-color: rgb(128,0,2);
+    margin-bottom: 0;
+    color: white; 
+  }
+
+.header h1 {
+    font-family: 'Megrim', serif;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.wrapper #quote {
+    position: absolute;
+    width: 500px;
+    top: 70px;
+    color: white;
+    left: 850px
+}
+
+.wrapper img {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+footer {
+    color: white;
+    background-color: rgb(128,0,2);
+    font-size: 12px;
+    padding: 10px;
+  }
+
+.confirmation-message {
+    color: rgb(85,85,85);
+}
+
+#quote h2 {
+    font-family: 'Bilbo', serif;
+    font-size: 55px;
+    color: rgb(47,47,47);
+    font-weight: bold;
+}
