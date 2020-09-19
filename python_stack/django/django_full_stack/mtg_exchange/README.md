@@ -19,7 +19,7 @@ Below are images of some features of the application:
 
 
 Main Page
-![ScreenShot](./Project_Images/main.png)
+![ScreenShot](./Project_Images/home.png)
 
 Full Cart Functionality 
 - Add to cart from list of cards
