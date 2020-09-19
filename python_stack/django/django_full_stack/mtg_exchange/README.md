@@ -37,7 +37,7 @@ Confirmation page: Order number is the id from the database
 ![ScreenShot](./Project_Images/confirmation.png)
 
 **The seller can upload an image of the product, description of the condition and all the information pertaining to the card.**
-![ScreenShot](./Project_Images/submission-form.png)
+![ScreenShot](./Project_Images/submission.png)
 
 **Integrated login/registration to allow buying/selling**
 ![ScreenShot](./Project_Images/login.png)
