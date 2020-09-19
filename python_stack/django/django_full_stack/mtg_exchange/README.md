@@ -19,27 +19,27 @@ Below are images of some features of the application:
 
 
 Main Page
-![ScreenShot](./Project_Images/main.PNG)
+![ScreenShot](./Project_Images/main.png)
 
 Full Cart Functionality 
 - Add to cart from list of cards
 - Review cart
-![ScreenShot](./Project_Images/cart.PNG)
-![ScreenShot](./Project_Images/review.PNG)
+![ScreenShot](./Project_Images/cart.png)
+![ScreenShot](./Project_Images/review.png)
 
 
 Checkout and confirmation with order # (in this case it is the ID assigned in the database)
 Each job posting has a "Bidding Square" where buyers can bid on a card if the seller allows it.
-![ScreenShot](./Project_Images/payment.PNG)
-![ScreenShot](./Project_Images/confirmation.PNG)
+![ScreenShot](./Project_Images/payment.png)
+![ScreenShot](./Project_Images/confirmation.png)
 
 The seller can upload an image of the product, description of the condition and all the information
 pertaining to the card. 
-![ScreenShot](./Project_Images/submission-form.PNG)
+![ScreenShot](./Project_Images/submission-form.png)
 
 Integrated login/registration to allow buying/selling
-![ScreenShot](./Project_Images/login.PNG)
-![ScreenShot](./Project_Images/registration.PNG)
+![ScreenShot](./Project_Images/login.png)
+![ScreenShot](./Project_Images/registration.png)
 
 
 
