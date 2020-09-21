@@ -11,9 +11,7 @@ export default function Login() {
   function handleSubmit(e) {
     e.preventDefault();
     setErr("");
-    axios
-      .post(
-        "http://localhost:4000/api/users/login",
+    axios.post("http://localhost:4000/api/users/login",
         {
           email,
           password,
@@ -21,7 +19,7 @@ export default function Login() {
         { withCredentials: true }
       )
       .then(() => navigate("/chat"))
-      .catch(() => setErr("Please check your credentials!"));
+      .catch(() => setErr("Please check your credentials"))
   }
 
   return (

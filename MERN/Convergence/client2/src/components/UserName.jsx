@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { navigate } from "@reach/router";
 import io from "socket.io-client";
+import '../static/Convergence.css'
 
 export default function UserName(props) {
   const [socket] = useState(() => io(":4000"));
@@ -19,48 +20,15 @@ export default function UserName(props) {
   };
 
   return (
-    <div
-      style={{
-        background: "rgba(68, 108, 179, .65)",
-        boxShadow: "1px 1px 20px black",
-        paddingTop: "25px",
-        paddingLeft:"100px",
-        paddingRight:"100px",
-        marginTop: "0px",
-        width: "250px",
-        marginLeft: "590px",
-      }}
-    >
-      {/* <h1
-        style={{
-          background: "lightgrey",
-          borderRadius: "5px",
-        }}
-      >
-        Choose a User Name!
-      </h1> */}
+    <div>
       <form onSubmit={handleSubmit}>
         <input
+        placeholder="Enter a username..."
+          className="username-input"
           value={newUserName}
-          style={{
-            borderRadius: "10px",
-            padding: "10px",
-            margin: "10px",
-            backgroundColor: "lightgrey",
-          }}
           onChange={(e) => setNewUserName(e.target.value)}
         />
-        <button
-          disabled={disableValue}
-          style={{
-            cursor: "pointer",
-            borderRadius: "10px",
-            padding: "10px",
-            margin: "20px",
-            backgroundColor: "lightgrey",
-            fontSize: "large",
-          }}
-        >
+        <button className="username-button">
           Enter Username
         </button>
       </form>

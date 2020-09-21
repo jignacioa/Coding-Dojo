@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 import { navigate } from "@reach/router";
 import axios from "axios";
+import '../static/Convergence.css';
 
 export default function Chat(props) {
   const [messages, setMessages] = useState([]);
@@ -37,60 +38,30 @@ export default function Chat(props) {
     setNewMessage("");
   }
   return (
-    <div
-    style={{
-      background: "rgba(68, 108, 179, .65)",
-      boxShadow: "1px 1px 20px black",
-      padding: "50px",
-      marginTop: "40px",
-      width: "700px",
-      marginLeft: "435px",
-      }}
-      >
+    <div className="chat-window">
       {
-        <h1 style={{ 
+        <h1/*style={{ 
           background: "lightgrey", 
-          borderRadius: "5px" }}>
+          borderRadius: "5px" }}*/>
           Chat Room
         </h1>
       }
-      {messages.map((message, i) => (
-        <p
-          style={{
-            background:
-              "url(https://img.freepik.com/free-photo/background-crumpled-paper-sheet_1194-7545.jpg?size=626&ext=jpg)",
-            borderRadius: "10px",
-            fontSize: "large",
-            padding: "5px",
-            fontWeight: "bold",
-          }}
-          key={i}
-        >
+      {messages.slice(0).reverse().map((message, i) => (
+        <div className="chat-bubble">
+        <p className="username">{message.user}</p>
+        <p className="message" key={i}>
           {" "}
-          {message.user} says:"{message.message}"
+          {message.message}
         </p>
+        </div>
       ))}
-      <form onSubmit={handleSubmit}>
+      <form className="message-form" onSubmit={handleSubmit}>
         <input
+        placeholder="Type message"
           value={newMessage}
-          style={{
-            borderRadius: "10px",
-            padding: "10px",
-            margin: "10px",
-            backgroundColor: "lightgrey",
-          }}
           onChange={(e) => setNewMessage(e.target.value)}
         />
-        <button
-          style={{
-            cursor: "pointer",
-            borderRadius: "10px",
-            padding: "10px",
-            margin: "20px",
-            backgroundColor: "lightgrey",
-            fontSize: "large"
-          }}
-        >
+        <button>
           Send
         </button>
       </form>

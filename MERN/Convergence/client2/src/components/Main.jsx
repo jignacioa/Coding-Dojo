@@ -4,6 +4,7 @@ import io from 'socket.io-client';
 import UserName from './UserName'
 import Chat from './Chat'
 import LogoutButton from './Logout'
+import '../static/Convergence.css'
 
 export default function Main() {
   const [newUserName, setNewUserName]=useState ('');
@@ -20,9 +21,11 @@ export default function Main() {
  
   return (
     <div>
-      <LogoutButton/>
+      <h1 className="header-convergence">Convergence Chat Room</h1>
+      <div className="main">
       <UserName onNewUser = {setCurrentUser}/><br/>
       <Chat user={newUserName}/>
+      </div>
     </div>
   )
 }
