@@ -11,4 +11,4 @@ Technologies Used:
 - Mongoose
 - Socket.io
 
-![Alt Text](https://media.giphy.com/media/hW3iaeabOkBbiTZc7w/giphy.gif)
+![ScreenShot](./chat.png)
