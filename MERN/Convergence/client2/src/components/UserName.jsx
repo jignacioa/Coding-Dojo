@@ -14,22 +14,23 @@ export default function UserName(props) {
     setNewUserName("");
     setDisableValue(true);
     if (newUserName) {
-      return alert("Now you are free to chat!");
+      return alert(`Now you are free to chat ${newUserName}!`);
     }
     //socket.emit('new user', newUserName)
   };
 
   return (
-    <div>
+    <div className="username-wrapper">
+      <p className="instructions">Enter a username to begin chatting!</p>
       <form onSubmit={handleSubmit}>
         <input
-        placeholder="Enter a username..."
+          placeholder='Username...'
           className="username-input"
           value={newUserName}
           onChange={(e) => setNewUserName(e.target.value)}
         />
         <button className="username-button">
-          Enter Username
+          Submit
         </button>
       </form>
     </div>

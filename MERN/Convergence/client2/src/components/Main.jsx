@@ -3,6 +3,7 @@ import { navigate } from '@reach/router';
 import io from 'socket.io-client';
 import UserName from './UserName'
 import Chat from './Chat'
+import Rules from '../views/Rules'
 import LogoutButton from './Logout'
 import '../static/Convergence.css'
 
@@ -20,12 +21,16 @@ export default function Main() {
   console.log(newUserName)
  
   return (
-    <div>
+    <div className="chat-room-background"> 
       <h1 className="header-convergence">Convergence Chat Room</h1>
       <div className="main">
+        <div>
       <UserName onNewUser = {setCurrentUser}/><br/>
-      <Chat user={newUserName}/>
+      <p>Selected username: {newUserName}</p>
+      <Rules/>
       </div>
+      <Chat user={newUserName}/>
+      </div> 
     </div>
   )
 }

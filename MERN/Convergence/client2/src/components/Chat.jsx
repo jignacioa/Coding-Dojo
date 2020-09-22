@@ -38,14 +38,10 @@ export default function Chat(props) {
     setNewMessage("");
   }
   return (
+    <>
+    <div>
+    <h1 className="room-header">Room</h1>
     <div className="chat-window">
-      {
-        <h1/*style={{ 
-          background: "lightgrey", 
-          borderRadius: "5px" }}*/>
-          Chat Room
-        </h1>
-      }
       {messages.slice(0).reverse().map((message, i) => (
         <div className="chat-bubble">
         <p className="username">{message.user}</p>
@@ -55,9 +51,11 @@ export default function Chat(props) {
         </p>
         </div>
       ))}
+      </div>
+      <div className="form-wrapper">
       <form className="message-form" onSubmit={handleSubmit}>
         <input
-        placeholder="Type message"
+        placeholder="Type message..."
           value={newMessage}
           onChange={(e) => setNewMessage(e.target.value)}
         />
@@ -65,6 +63,8 @@ export default function Chat(props) {
           Send
         </button>
       </form>
-    </div>
+      </div>
+      </div>
+    </>
   );
 }
