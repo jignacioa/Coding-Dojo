@@ -6,6 +6,7 @@ import Chat from './Chat'
 import Rules from '../views/Rules'
 import LogoutButton from './Logout'
 import '../static/Convergence.css'
+import Header from '../views/Header'
 
 export default function Main() {
   const [newUserName, setNewUserName]=useState ('');
@@ -22,7 +23,7 @@ export default function Main() {
  
   return (
     <div className="chat-room-background"> 
-      <h1 className="header-convergence">Convergence Chat Room</h1>
+       <Header header="Convergence Chat Room" classname="header-convergence"/>
       <div className="main">
         <div>
       <UserName onNewUser = {setCurrentUser}/><br/>

@@ -3,6 +3,7 @@ import io from "socket.io-client";
 import { navigate } from "@reach/router";
 import axios from "axios";
 import '../static/Convergence.css';
+import Header from '../views/Header'
 
 export default function Chat(props) {
   const [messages, setMessages] = useState([]);
@@ -40,7 +41,7 @@ export default function Chat(props) {
   return (
     <>
     <div>
-    <h1 className="room-header">Room</h1>
+    <Header header="Room" classname="room-header"/>
     <div className="chat-window">
       {messages.slice(0).reverse().map((message, i) => (
         <div className="chat-bubble">
