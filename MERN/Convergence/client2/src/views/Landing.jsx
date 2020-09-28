@@ -7,6 +7,14 @@ import Header from './Header'
 
 export default function Landing() {
     return (
-        <Header header="Convergence" classname="header-convergence"/>
+        <>
+        <div className="bar"></div>
+        <Header header="Convergence" classname="landing-convergence"/>
+        <div className="chat-box"></div>
+        <div className="chat-box"></div>
+        <div className="bar-bottom"></div>
+        
+        </>
+
     )
 }

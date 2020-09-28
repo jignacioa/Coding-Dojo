@@ -23,7 +23,7 @@ export default function Main() {
  
   return (
     <div className="chat-room-background"> 
-       <Header header="Convergence Chat Room" classname="header-convergence"/>
+       <Header header="Convergence" classname="header-convergence"/>
       <div className="main">
         <div>
       <UserName onNewUser = {setCurrentUser}/><br/>
