@@ -32,30 +32,43 @@
     margin-bottom: 0;
     font-family: 'Mako', sans-serif;
     font-size: 150px;
-    color: rgb(65,34,231)
+    color: rgb(65,34,231);
+    position: absolute;
+    top: 130px;
+    left: 300px;
 }
 
+.name-and-chatbox {
+    position: relative;
+}
+.chatbox-div {
+    position: absolute;
+    top: 50px;
+    left: 920px;
+}
 .chat-box {
     width: 300px;
     margin: 50px auto;
-    border-radius: 5px;
+    margin-bottom: 25px;
+    border-radius: 30px;
     position: relative;
-    padding: 20px;
-    background-color:red;
-    border: 5px solid color pink;
+    padding: 9px;
+    font-size: 35px;
+    background-color: rgb(100,166,179);
+    color: white;
 }
 
-.piece:before {
+.piece:before{
     content: "";
     width: 0px;
     height: 0px;
     position: absolute;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 10px solid red;
+    border-top: 10px solid rgb(100,166,179);
     border-bottom: 10px solid transparent;
-    right: -10px;
-    bottom: 6px;
+    right: 80%;
+    bottom: -20px;
    }
 
 .main {
