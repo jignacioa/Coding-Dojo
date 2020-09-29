@@ -10,8 +10,8 @@ export default function Landing() {
         <>
         <div className="bar"></div>
         <Header header="Convergence" classname="landing-convergence"/>
-        <div className="chat-box"></div>
-        <div className="chat-box"></div>
+        <div className="chat-box piece"></div>
+        <div className="chat-box piece"></div>
         <div className="bar-bottom"></div>
         
         </>

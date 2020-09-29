@@ -15,6 +15,7 @@
 .bar {
     background-color: rgb(65,34,231);
     height: 50px;
+    box-shadow: 0 8px 6px -6px black
 }
 
 .bar-bottom {
@@ -22,7 +23,8 @@
     height: 50px;
     position:fixed;
     bottom: 0;
-    width: 100%
+    width: 100%;
+    box-shadow: 0 8px 6px -6px black;
 }
 
 .landing-convergence {
@@ -34,11 +36,27 @@
 }
 
 .chat-box {
-    width: 100px;
-    height: 20px;
+    width: 300px;
+    margin: 50px auto;
+    border-radius: 5px;
+    position: relative;
+    padding: 20px;
     background-color:red;
     border: 5px solid color pink;
 }
+
+.piece:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid red;
+    border-bottom: 10px solid transparent;
+    right: -10px;
+    bottom: 6px;
+   }
 
 .main {
     display: flex;
