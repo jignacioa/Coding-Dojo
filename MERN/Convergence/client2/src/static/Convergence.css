@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa&family=Syne:wght@800&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Mako&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
 .header-convergence {
     background-color: rgb(65,34,231);
@@ -14,28 +15,45 @@
 
 .bar {
     background-color: rgb(65,34,231);
-    height: 50px;
-    box-shadow: 0 8px 6px -6px black
+    height: 70px;
+    line-height: 70px;
+    box-shadow: 0 8px 6px -6px black;
+    color: white;
+    text-align: left;
+    padding-left: 35px;
+    font-size: 50px;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .bar-bottom {
     background-color: rgb(65,34,231);
-    height: 50px;
+    height: 75px;
     position:fixed;
     bottom: 0;
     width: 100%;
     box-shadow: 0 8px 6px -6px black;
+    z-index: 1;
+}
+
+.footer-message {
+    margin: 0;
+    color: white;
+}
+.footer-message-div {
+    margin-top: 15px;
 }
 
 .landing-convergence {
     margin-top: 0;
     margin-bottom: 0;
     font-family: 'Mako', sans-serif;
-    font-size: 150px;
-    color: rgb(65,34,231);
+    font-size: 170px;
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     position: absolute;
     top: 130px;
-    left: 300px;
+    left: 250px;
 }
 
 .name-and-chatbox {
@@ -43,8 +61,8 @@
 }
 .chatbox-div {
     position: absolute;
-    top: 50px;
-    left: 920px;
+    top: 60px;
+    left: 930px;
 }
 .chat-box {
     width: 300px;
@@ -52,10 +70,13 @@
     margin-bottom: 25px;
     border-radius: 30px;
     position: relative;
-    padding: 9px;
+    padding:9px;
     font-size: 35px;
     background-color: rgb(100,166,179);
     color: white;
+    box-shadow: 0px 9px 11px -8px black;
+    z-index: 1;
+    font-family: 'Comfortaa', cursive;
 }
 
 .piece:before{
@@ -63,13 +84,26 @@
     width: 0px;
     height: 0px;
     position: absolute;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid rgb(100,166,179);
+    border-left: 0px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 30px solid rgb(100,166,179);
     border-bottom: 10px solid transparent;
     right: 80%;
-    bottom: -20px;
+    bottom: -40px;
    }
+
+.landing-button {
+    position: absolute;
+    top: 500px;
+    left: 575px;
+    border-radius: 5px;
+    height: 80px;
+    width: 300px;
+    font-size: 30px;
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    background-color: rgb(150,200,48);
+}
 
 .main {
     display: flex;

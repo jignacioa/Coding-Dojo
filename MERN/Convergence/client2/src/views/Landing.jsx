@@ -8,15 +8,21 @@ import Header from './Header'
 export default function Landing() {
     return (
         <>
-        <div className="bar"></div>
+        <div className="bar">C</div>
         <div className="name-and-chatbox">
-        <div className="chatbox-div">
-        <div className="chat-box piece">Let's converge!</div>
+            <div className="chatbox-div">
+                <div className="chat-box piece">Let's converge!</div>
+            </div>
+            <Header header="Convergence" classname="landing-convergence"/>
+            <button className="landing-button">Enter  Chatroom</button>
         </div>
-        <Header header="Convergence" classname="landing-convergence"/>
+        
+        <div className="bar-bottom">
+            <div className="footer-message-div">
+            <p className="footer-message">Convergence</p>
+            <p className="footer-message">Real-time chat app for demo purposes only</p>
+            </div>
         </div>
-        <div className="bar-bottom"></div>
-        <button>Enter  Chatroom</button>
         </>
 
     )

@@ -11,4 +11,8 @@ Technologies Used:
 - Mongoose
 - Socket.io
 
+## Landing Page:
+![ScreenShot](./landingpage.png)
+
+## Chat Room
 ![ScreenShot](./chat.png)
