@@ -12,9 +12,9 @@
 	<div class="container">
 		<h1 id="header">ProManager</h1>
 		<div id="projectsHeader">
-			<h1><c:out value="${project.project}"/></h1>
+			<h1 id="projectName"><c:out value="${project.project}"/></h1>
 			<h3 id="description"><c:out value="${project.description}"/></h3>
-			<div>
+			<div id="linksDiv">
 				<a id="projectsLink" href="/projects">Projects</a>
 				<a id="logout" href="/logout">Log Out</a>
 			</div>
@@ -48,14 +48,14 @@
 						    <input type="hidden" name="_method" value="delete">
 						    <input type="submit" value="Delete">
 							</form></td>
-						<td><a id="editLink" href="/projects/${project.id}/tasks/${projectTask.id}/edit">Edit Task</a></td>
+						<td><a id="editLink" href="/projects/${project.id}/tasks/${projectTask.id}/edit">Edit</a></td>
 			        </tr>
 			    </c:forEach>
 		    </tbody>
 			</table>
 			<form action="/projects/${project.id}/tasks/add" method="post">
 		    <input type="hidden">
-		    <input type="submit" value="Create Task">
+		    <input type="submit" value="Add Task">
 			</form>
 		</div>
 	</div>

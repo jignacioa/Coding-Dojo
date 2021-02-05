@@ -12,21 +12,23 @@
 }
 
 #header {
-	background: rgb(19,50,43);
+	background: rgb(1,145,151);
 	color: white;
 	font-family: Bahnschrift Light;
+	font-size: 65px;
 	height: 80px;
 	display: flex;
     justify-content: left; 
     align-items: center; 
     padding-left: 25px;
+    
 }
 
 #projectsHeader {
 	font-family:Bahnschrift Light;
 	height: 80px;
-	background: rgb(19,79,69);
-	color: rgb(178,141,92);
+	background: rgb(78,187,171);
+	color: rgb(76 76 80);
 	display: flex;
     justify-content: space-between; 
     align-items: center; 
@@ -34,14 +36,37 @@
     padding-left: 25px;
     box-shadow: 0px 7px 5px rgb(206,206,206);
     margin-bottom: 50px;
+    
 }
 
+#projectName {
+	font-size: 35px;
+}
+
+#description {
+	font-size: 25px;
+}
+
+#linksDiv {
+	display:inline-flex;
+    justify-content: center;
+}
 #projectsLink, #logout {
 	display:inline-block;
 	color: white;
 	text-decoration: none;
-	margin-right: 10px;
+	margin-right: 0px;
 	cursor: pointer;
+	font-size: 20px;
+	height: 45px;
+    line-height: 45px;
+    width: 142px;
+    border-left: 1px solid rgb(1,145,151);
+    display:inline-flex;
+    justify-content: center;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
 }
 
 .information, .projects, .member-section {
@@ -77,11 +102,13 @@
 form input[type=submit] {
 	background-color: rgb(0,95,254);
 	color: white;
-	width: 80px;
-	height: 25px;
+	font-size: 18px;
+	width: 100px;
+	height: 40px;
 	border-radius: 10px;
 	border: none;
 	cursor: pointer;
+
 }
 
 #team {
@@ -89,11 +116,13 @@ form input[type=submit] {
 	background-color: rgb(242,242,242);
 	padding: 25px;
 	border-radius: 10px;
+	height: fit-content;
 }
 
 #team h4 {
 	margin-bottom: 5px;
 	color: rgb(3,136,155);
+	font-size:20px;
 }
 
 #team p {
@@ -101,13 +130,20 @@ form input[type=submit] {
 }
 
 table {
-    width: 700px;
+    width: 900px;
     font-family: "Proxima Nova Soft", "Helvetica Neue", sans-serif;
+	-moz-box-shadow: 0 0 5px #888;
+	-webkit-box-shadow: 0 0 5px#888;
+	box-shadow: 0 0 5px #888;
+	padding: 10px;
+	border-radius: 5px;
 }
+
 
 th, .edit-create-form h3, .member-section h3 {
 	text-align: center;
 	color: rgb(166,28,59);
+	font-size: 30px;
 }
 
 td {
@@ -119,22 +155,24 @@ td {
 table input[type=submit] {
 	background-color: rgb(220,53,69);
 	color: white;
-	width: 65px;
-	height: 25px;
+	width: 100px;
+	height: 40px;
 	border-radius: 10px;
 	border: none;
 	cursor: pointer;
+	font-size: 18px;
 }
 
 #editLink {
 	background-color: rgb(70,184,218);
 	color: white;
-	width: 65px;
-	height: 25px;
+	width: 100px;
+	height: 40px;
 	border-radius: 10px;
 	display: block;
-	font-size: 13px;
-	line-height: 25px;
+	font-size: 18px;
+	line-height: 40px;
+	text-decoration: none;
 }
 
 #cancelLink {
@@ -149,6 +187,8 @@ table input[type=submit] {
 	line-height: 25px;
 	margin: auto;
 }
+
+
 
 
 
