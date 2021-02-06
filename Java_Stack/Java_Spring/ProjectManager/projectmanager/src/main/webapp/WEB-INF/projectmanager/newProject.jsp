@@ -21,8 +21,8 @@
 			</div>
 		</div>
 	<form:form class="edit-create-form" action="/projects" method="post" modelAttribute="project">
-	<h3>Project Creation Form</h3>
-	<p>
+	<h3>Project Details</h3>
+	<p id="titleInput">
         <form:label path="project">Project Title:</form:label>
         <form:errors path="project"/>
         <form:input path="project"/>
@@ -32,7 +32,7 @@
         <form:errors path="description"/>
         <form:textarea path="description"/>
     </p>
-    <input type="submit" value="Submit"/>
+    <input id="inputSubmit" type="submit" value="Submit"/>
     <p><a id="cancelLink" href="/projects/${project.id}">Cancel</a>
 </form:form>
 </div>
