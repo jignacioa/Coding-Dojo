@@ -22,11 +22,10 @@
 			</div>
 		</div>
 		<div class="information">
-		<form:form class="edit-create-form " action="/projects/tasks/new" method="POST" modelAttribute="task">
+		<form:form class="taskForm " action="/projects/tasks/new" method="POST" modelAttribute="task">
 			<form:hidden path="project.id" value="${project.id}"/>
 			<form:hidden path="taskCreator.id" value="${userId}"/>
-			<h3>Task Creator</h3>
-			<p id="textarea">
+			<p>
 		        <form:label path="task">Task:</form:label>
 		        <form:errors path="task"/>
 		        <form:textarea path="task"/>
@@ -72,7 +71,7 @@
 		</table>
 		<form id="form-done" action="/projects/${project.id}" method="post">
 		    <input type="hidden">
-		    <input type="submit" value="Done">
+		    <input id="doneTask" type="submit" value="Done">
 		</form>
 		</div>
 	</div>

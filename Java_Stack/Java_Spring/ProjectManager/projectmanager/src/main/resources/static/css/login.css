@@ -10,9 +10,10 @@
 }
 
 h1 {
-	background: rgb(19,50,43);
+	background: rgb(1,145,151);
 	color: white;
 	font-family: Bahnschrift Light;
+	font-size: 65px;
 	height: 80px;
 	display: flex;
     justify-content: left; 

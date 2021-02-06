@@ -14,13 +14,13 @@
 	<div class="container">
 		<h1 id="header">ProManager</h1>
 		<div id="projectsHeader">
-		<h1>Edit task for <c:out value="${project.project}"/></h1>
+		<h1>Editing task for <c:out value="${project.project}"/></h1>
 		<a id="logout" href="/logout">Log Out</a>
 		</div>
 		<form:form class="edit-create-form" action="/projects/${project.id}/tasks/${task.id}/edit" method="post" modelAttribute="task">
 		    <input type="hidden" name="_method" value="put">
 		    <form:hidden path="project.id" value="${project.id}"/>
-		    <h3>Task Editing Form</h3>
+		    <h3>Edit Task</h3>
 		    <p id="textarea">
 		        <form:label path="task">Task:</form:label>
 		        <form:errors path="task"/>
@@ -44,7 +44,7 @@
 		        	<form:option value="Low">Low</form:option>
 		        </form:select>
 		    </p>  
-		    <input type="submit" value="Submit"/>
+		    <input id="inputSubmit" type="submit" value="Submit"/>
 		    <p><a id="cancelLink" href="/projects/${project.id}">Cancel</a>
 		</form:form>
 	</div>
