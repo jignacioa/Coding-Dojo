@@ -10,18 +10,15 @@ Technologies used:
 - MySQL to access and manage the database
 
 # Project creation function: 
-### Project manager creates the project, adds team members from database of registered users, creates and assigns tasks amongst team members
-![ScreenShot](./ProManager/project_creation.gif)
-
-# Projects listing and a project information page:
-### List of projects 
+### Project manager creates the project, adds team members from database of registered users
 ![ScreenShot](./ProManager/main_page.PNG)
-### Project description, team members, project manager, and tasks with details and delete/edit options
-![ScreenShot](./ProManager/project_info.PNG)
+![ScreenShot](./ProManager/new_project.PNG)
 
-# Task editing function:
-### Tasks can be edited and deleted to fit the needs of the project
-![ScreenShot](./ProManager/task_editing.gif)
+# Project information page with the option to edit, add and assign new tasks:
+![ScreenShot](./ProManager/project_info.PNG)
+### Add, delete and edit tasks to fit the project's needs
+![ScreenShot](./ProManager/add_task.PNG)
+![ScreenShot](./ProManager/edit_task.PNG.PNG)
 
 # Login & Registration:
 ![ScreenShot](./ProManager/LogIn.PNG) 
