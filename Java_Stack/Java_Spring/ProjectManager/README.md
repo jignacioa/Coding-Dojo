@@ -13,7 +13,9 @@ Technologies used:
 ### Project manager creates the project, adds team members from database of registered users, creates and assigns tasks amongst team members
 ![ScreenShot](./ProManager/project_creation.gif)
 
-# Project information page:
+# Projects listing and a project information page:
+### List of projects 
+![ScreenShot](./ProManager/main_page.PNG)
 ### Project description, team members, project manager, and tasks with details and delete/edit options
 ![ScreenShot](./ProManager/project_info.PNG)
 
