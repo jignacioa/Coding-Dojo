@@ -108,7 +108,7 @@
 	vertical-align: middle;
 }
 
-#newLink {
+#newLink, #addTask {
 	background-color: rgb(1,145,151);
 	color: white;
 	font-size: 18px;
@@ -118,6 +118,10 @@
 	border: none;
 	cursor: pointer;
 
+}
+
+#addTask {
+	border-radius: 5px 5px 5px 5px;
 }
 
 #team {

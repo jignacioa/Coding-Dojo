@@ -55,7 +55,7 @@
 			</table>
 			<form action="/projects/${project.id}/tasks/add" method="post">
 		    <input type="hidden">
-		    <input type="submit" value="Add Task">
+		    <input id="addTask" type="submit" value="Add Task">
 			</form>
 		</div>
 	</div>
