@@ -69,10 +69,19 @@
     box-shadow: 0 0 5px #888;
 }
 
-.information, .projects, .member-section {
+.information, .member-section {
 	display: flex;
     justify-content: space-evenly; 	
 }
+
+.projects {
+	display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 
 .edit-create-form {
     justify-content: center; 
@@ -99,13 +108,13 @@
 	vertical-align: middle;
 }
 
-form input[type=submit] {
-	background-color: rgb(0,95,254);
+#newLink {
+	background-color: rgb(1,145,151);
 	color: white;
 	font-size: 18px;
-	width: 100px;
+	width: 110px;
 	height: 40px;
-	border-radius: 10px;
+	border-radius: 5px 5px 0px 0px;
 	border: none;
 	cursor: pointer;
 
@@ -136,7 +145,7 @@ table {
 	-webkit-box-shadow: 0 0 5px#888;
 	box-shadow: 0 0 5px #888;
 	padding: 10px;
-	border-radius: 5px;
+	border-radius: 0px 5px 5px 5px;
 }
 
 
@@ -155,7 +164,7 @@ td {
 table input[type=submit] {
 	background-color: rgb(220,53,69);
 	color: white;
-	width: 100px;
+	width: 80px;
 	height: 40px;
 	border-radius: 10px;
 	border: none;
@@ -166,7 +175,7 @@ table input[type=submit] {
 #editLink {
 	background-color: rgb(70,184,218);
 	color: white;
-	width: 100px;
+	width: 80px;
 	height: 40px;
 	border-radius: 10px;
 	display: block;
@@ -188,6 +197,10 @@ table input[type=submit] {
 	margin: auto;
 }
 
+
+#projectForm {
+	margin-right: 789px;
+}
 
 
 

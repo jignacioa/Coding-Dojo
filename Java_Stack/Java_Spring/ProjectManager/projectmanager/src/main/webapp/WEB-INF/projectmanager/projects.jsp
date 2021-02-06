@@ -16,6 +16,10 @@
 	<a id="logout" href="/logout">Log Out</a>
 	</div>
 	<div class="projects">
+	<form id="projectForm" action="/projects/new" method="post">
+	    <input type="hidden">
+	    <input id="newLink" type="submit" value="Add Project">
+	</form>
 	<table>
     <thead>
         <tr>
@@ -37,10 +41,6 @@
 	    </c:forEach>
     </tbody>
 	</table>
-	<form action="/projects/new" method="post">
-	    <input type="hidden">
-	    <input id="newLink" type="submit" value="New Project">
-	</form>
 	</div>
 	</div>
 </body>
