@@ -17,7 +17,7 @@
     <p><c:out value="${error}" /></p>
     <div class="form">
     <form method="post" action="/login">
-    <h3>Member Login</h3>
+    <h3 class="formTitle">Member Login</h3>
         <p>
             <label for="email">Email</label>
             <input type="text" id="email" name="email"/>
