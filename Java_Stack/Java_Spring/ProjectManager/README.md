@@ -18,7 +18,7 @@ Technologies used:
 ![ScreenShot](./ProManager/project_info.PNG)
 ### Add, delete and edit tasks to fit the project's needs
 ![ScreenShot](./ProManager/add_task.PNG)
-![ScreenShot](./ProManager/edit_task.PNG.PNG)
+![ScreenShot](./ProManager/edit_task.PNG)
 
 # Login & Registration:
 ![ScreenShot](./ProManager/LogIn.PNG) 
